@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<forms-definition product-version="5.4">
+  <process name="Rules_Management_Process" version="1.0">
+    <process-label>Rules Management Process</process-label>
+    <process-template>html/Rules_Management_Process_process_template.html</process-template>
+    <mandatory-symbol>*</mandatory-symbol>
+    <mandatory-label>mandatory</mandatory-label>
+    <pageflow/>
+    <activities>
+      <activity name="Menu">
+        <pageflow first-page="Menu">
+          <pages>
+            <page id="Menu">
+              <page-label>Menu</page-label>
+              <allow-html-in-label>false</allow-html-in-label>
+              <page-template>html/Menu_Menu.html</page-template>
+              <widgets>
+                <widget id="Edit_Base_Rules" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Edit Base Rules</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="HTML_widget1" type="MESSAGE">
+                  <initial-value>
+                    <expression>-------------------------------</expression>
+                  </initial-value>
+                  <allow-html-in-field>true</allow-html-in-field>
+                  <variable-bound>-------------------------------</variable-bound>
+                </widget>
+                <widget id="Create_Rule" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Create Rule</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Edit_Rules" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Edit Rules</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="HTML_widget2" type="MESSAGE">
+                  <initial-value>
+                    <expression>-------------------------------</expression>
+                  </initial-value>
+                  <allow-html-in-field>true</allow-html-in-field>
+                  <variable-bound>-------------------------------</variable-bound>
+                </widget>
+                <widget id="Exit" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Exit</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+              </widgets>
+              <actions>
+                <action type="SET_VARIABLE">
+                  <variable>menu_Options</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>Edit_Base</expression>
+                  <submit-button>Edit_Base_Rules</submit-button>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>menu_Options</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>Add_Rule</expression>
+                  <submit-button>Create_Rule</submit-button>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>menu_Options</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>Edit_Rules</expression>
+                  <submit-button>Edit_Rules</submit-button>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>menu_Options</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>Exit</expression>
+                  <submit-button>Exit</submit-button>
+                </action>
+              </actions>
+            </page>
+          </pages>
+        </pageflow>
+      </activity>
+      <activity name="Start"/>
+      <activity name="End"/>
+      <activity name="Step1">
+        <pageflow first-page="Edit">
+          <pages>
+            <page id="Edit">
+              <page-label>Edit</page-label>
+              <allow-html-in-label>false</allow-html-in-label>
+              <page-template>html/Step1_Edit.html</page-template>
+              <widgets>
+                <widget id="Lista" type="TABLE">
+                  <select-mode>NONE</select-mode>
+                  <available-values>
+                    <expression>${import org.ow2.bonita.facade.privilege.PrivilegePolicy;
+	import org.ow2.bonita.facade.*;
+	import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
+	import org.ow2.bonita.util.AccessorUtil;
+	import org.ow2.bonita.facade.privilege.Rule;
+	import org.ow2.bonita.facade.privilege.Rule.RuleType;
+	
+	
+	List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
+			
+	List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
+	
+	for(RuleType atual: all){
+		valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
+		
+		retorno.add([atual.toString(),valorStr]);
+	}
+	
+	return retorno;}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <horizontal-header>${["RuleType","Policy"]}</horizontal-header>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <cell-style>table_cells_Step1_Edit_Lista</cell-style>
+                  <headings-style>table_headers_Step1_Edit_Lista</headings-style>
+                  <headings-positions>
+                    <left-headings>false</left-headings>
+                    <top-headings>true</top-headings>
+                    <right-headings>false</right-headings>
+                    <bottom-headings>false</bottom-headings>
+                  </headings-positions>
+                  <table-style>table_Step1_Edit_Lista</table-style>
+                  <label-style>label_Step1_Edit_Lista</label-style>
+                  <style>input_Step1_Edit_Lista</style>
+                  <variable-bound>${import org.ow2.bonita.facade.privilege.PrivilegePolicy;
+	import org.ow2.bonita.facade.*;
+	import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
+	import org.ow2.bonita.util.AccessorUtil;
+	import org.ow2.bonita.facade.privilege.Rule;
+	import org.ow2.bonita.facade.privilege.Rule.RuleType;
+	
+	
+	List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
+			
+	List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
+	
+	for(RuleType atual: all){
+		valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
+		
+		retorno.add([atual.toString(),valorStr]);
+	}
+	
+	return retorno;}</variable-bound>
+                </widget>
+                <widget id="Rule" type="LISTBOX_SIMPLE">
+                  <available-values>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule.RuleType;
+
+return Arrays.asList(RuleType.values());}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Rule</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Option" type="RADIOBUTTON_GROUP">
+                  <initial-value>
+                    <expression>Deny</expression>
+                  </initial-value>
+                  <available-values>
+                    <expression>${["Allow","Deny"]}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="Back" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Back</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Modify" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Modify</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+              </widgets>
+              <actions>
+                <action type="SET_VARIABLE">
+                  <variable>action</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>back</expression>
+                  <submit-button>Back</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import org.ow2.bonita.facade.*;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
+import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.IdentityAPI;
+import org.ow2.bonita.facade.uuid.AbstractUUID;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+import org.apache.directory.groovyldap.*
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.impl.StandardAPIAccessorImpl;
+import org.ow2.bonita.facade.privilege.PrivilegePolicy;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+
+PrivilegePolicy baserule;
+switch(field_Option)
+{
+case "Allow" :baserule = PrivilegePolicy.ALLOW_BY_DEFAULT;  break;
+case "Deny":baserule = PrivilegePolicy.DENY_BY_DEFAULT; break;
+}
+
+AccessorUtil.getManagementAPI().setRuleTypePolicy(RuleType.valueOf(field_Rule), baserule);}</expression>
+                  <submit-button>Modify</submit-button>
+                </action>
+              </actions>
+            </page>
+          </pages>
+        </pageflow>
+      </activity>
+      <activity name="Step2">
+        <pageflow first-page="List_Rules">
+          <pages>
+            <page id="List_Rules">
+              <page-label>List Rules</page-label>
+              <allow-html-in-label>false</allow-html-in-label>
+              <page-template>html/Step2_List_Rules.html</page-template>
+              <widgets>
+                <widget id="Rules" type="TABLE">
+                  <select-mode>NONE</select-mode>
+                  <available-values>
+                    <expression>${import org.ow2.bonita.facade.*;&#13;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
+import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.IdentityAPI;&#13;
+import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
+import org.apache.directory.groovyldap.*&#13;
+import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
+import org.ow2.bonita.facade.privilege.Rule&#13;
+&#13;
+List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
+List&lt;List&lt;String&gt;&gt; output = new ArrayList&lt;List&lt;String&gt;&gt;();&#13;
+&#13;
+&#13;
+for(rule in rules)&#13;
+{&#13;
+	List&lt;String&gt; ruleslist=[];&#13;
+	ruleslist.add(rule.getName());&#13;
+	ruleslist.add(rule.getLabel());&#13;
+	ruleslist.add(rule.getUsers().size());&#13;
+	ruleslist.add(rule.getRoles().size());&#13;
+	ruleslist.add(rule.getGroups().size());&#13;
+	ruleslist.add(rule.getEntities().size());&#13;
+	ruleslist.add(rule.getType().toString())&#13;
+	output.add(ruleslist)&#13;
+}&#13;
+return output;}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <horizontal-header>${["Name","Label","Users","Roles","Groups","Entities","Type"]}</horizontal-header>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <cell-style>table_cells_Step2_List_Rules_Rules</cell-style>
+                  <headings-style>table_headers_Step2_List_Rules_Rules</headings-style>
+                  <headings-positions>
+                    <left-headings>false</left-headings>
+                    <top-headings>true</top-headings>
+                    <right-headings>false</right-headings>
+                    <bottom-headings>false</bottom-headings>
+                  </headings-positions>
+                  <table-style>table_Step2_List_Rules_Rules</table-style>
+                  <label-style>label_Step2_List_Rules_Rules</label-style>
+                  <style>input_Step2_List_Rules_Rules</style>
+                  <variable-bound>${import org.ow2.bonita.facade.*;&#13;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
+import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.IdentityAPI;&#13;
+import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
+import org.apache.directory.groovyldap.*&#13;
+import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
+import org.ow2.bonita.facade.privilege.Rule&#13;
+&#13;
+List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
+List&lt;List&lt;String&gt;&gt; output = new ArrayList&lt;List&lt;String&gt;&gt;();&#13;
+&#13;
+&#13;
+for(rule in rules)&#13;
+{&#13;
+	List&lt;String&gt; ruleslist=[];&#13;
+	ruleslist.add(rule.getName());&#13;
+	ruleslist.add(rule.getLabel());&#13;
+	ruleslist.add(rule.getUsers().size());&#13;
+	ruleslist.add(rule.getRoles().size());&#13;
+	ruleslist.add(rule.getGroups().size());&#13;
+	ruleslist.add(rule.getEntities().size());&#13;
+	ruleslist.add(rule.getType().toString())&#13;
+	output.add(ruleslist)&#13;
+}&#13;
+return output;}</variable-bound>
+                </widget>
+                <widget id="Rule" type="LISTBOX_SIMPLE">
+                  <available-values>
+                    <expression>${import org.ow2.bonita.facade.*;&#13;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
+import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.IdentityAPI;&#13;
+import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
+import org.apache.directory.groovyldap.*&#13;
+import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
+import org.ow2.bonita.facade.privilege.Rule&#13;
+&#13;
+List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
+&#13;
+List&lt;String&gt; output = [];&#13;
+for(rule in rules)&#13;
+{&#13;
+output.add(rule.getName().toString())&#13;
+}&#13;
+return output;}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Rule</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Edit" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Edit</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Delete" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Delete</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Back" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Back</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+              </widgets>
+              <actions>
+                <action type="SET_VARIABLE">
+                  <variable>action</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>${import org.ow2.bonita.facade.*;&#13;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
+import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.IdentityAPI;&#13;
+import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
+import org.apache.directory.groovyldap.*&#13;
+import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
+import org.ow2.bonita.facade.privilege.Rule&#13;
+&#13;
+List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
+String ruleUUID="";&#13;
+for(Rule atual:rules){&#13;
+	if(atual.getName().equals(field_Rule)){&#13;
+		ruleUUID=atual.getUUID();&#13;
+		break;&#13;
+	}&#13;
+}&#13;
+&#13;
+AccessorUtil.getManagementAPI().deleteRuleByUUID(ruleUUID);&#13;
+&#13;
+&#13;
+return "remove";}</expression>
+                  <submit-button>Delete</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import org.ow2.bonita.facade.*;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
+import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.IdentityAPI;
+import org.ow2.bonita.facade.uuid.AbstractUUID;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+import org.apache.directory.groovyldap.*
+import org.ow2.bonita.facade.privilege.Rule.RuleType
+import org.ow2.bonita.facade.privilege.Rule
+
+List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();
+
+for(Rule atual:rules){
+	if(atual.getName().equals(field_Rule)){
+		selectedRule=atual.getUUID();
+		break;
+	}
+}
+
+action="edit";}</expression>
+                  <submit-button>Edit</submit-button>
+                </action>
+              </actions>
+            </page>
+          </pages>
+        </pageflow>
+      </activity>
+      <activity name="Step3">
+        <pageflow first-page="Create_Rule">
+          <pages>
+            <page id="Create_Rule">
+              <page-label>Create Rule</page-label>
+              <allow-html-in-label>false</allow-html-in-label>
+              <page-template>html/Step3_Create_Rule.html</page-template>
+              <widgets>
+                <widget id="name" type="TEXTBOX">
+                  <initial-value>
+                    <expression>${name}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Name</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <variable-bound>${name}</variable-bound>
+                </widget>
+                <widget id="label" type="TEXTBOX">
+                  <initial-value>
+                    <expression>${label}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Label</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <variable-bound>${label}</variable-bound>
+                </widget>
+                <widget id="Rule_Type" type="LISTBOX_SIMPLE">
+                  <available-values>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule.RuleType;
+
+return Arrays.asList(RuleType.values());}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Rule Type</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <variable-bound>${ruleType}</variable-bound>
+                </widget>
+                <widget id="description" type="TEXTAREA">
+                  <initial-value>
+                    <expression>${description}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <label>Description</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <variable-bound>${description}</variable-bound>
+                </widget>
+                <widget id="Back" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Back</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Create" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Create</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+              </widgets>
+              <actions>
+                <action type="SET_VARIABLE">
+                  <variable>label</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>field_label</expression>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>name</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>field_name</expression>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>ruleType</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>field_Rule_Type</expression>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>description</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>field_description</expression>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.List;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+
+Rule newRule=AccessorUtil.getManagementAPI().createRule(name, label, description, RuleType.valueOf(ruleType));
+selectedRule=newRule.getUUID();}</expression>
+                  <submit-button>Create</submit-button>
+                </action>
+                <action type="SET_VARIABLE">
+                  <variable>action</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>${"back"}</expression>
+                  <submit-button>Back</submit-button>
+                </action>
+              </actions>
+            </page>
+          </pages>
+        </pageflow>
+      </activity>
+      <activity name="Edit_Rule">
+        <pageflow first-page="Edit_Rule">
+          <pages>
+            <page id="Edit_Rule">
+              <page-label>Edit Rule</page-label>
+              <allow-html-in-label>false</allow-html-in-label>
+              <page-template>html/Edit_Rule_Edit_Rule.html</page-template>
+              <widgets>
+                <widget id="Rule_Info" type="TEXT">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Rule_Info</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Rule_Info</style>
+                </widget>
+                <widget id="RuleUUID" type="TEXT">
+                  <initial-value>
+                    <expression>${selectedRule}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label>UUID</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <label-style>label_Edit_Rule_Edit_Rule_RuleUUID</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_RuleUUID</style>
+                  <variable-bound>${selectedRule}</variable-bound>
+                </widget>
+                <widget id="RuleType" type="TEXT">
+                  <initial-value>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getType().toString()}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label>Type</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <label-style>label_Edit_Rule_Edit_Rule_RuleType</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_RuleType</style>
+                  <variable-bound>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getType().toString()}</variable-bound>
+                </widget>
+                <widget id="Rule_Name" type="TEXT">
+                  <initial-value>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getName();}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label>Name</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <label-style>label_Edit_Rule_Edit_Rule_Rule_Name</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Rule_Name</style>
+                  <variable-bound>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getName();}</variable-bound>
+                </widget>
+                <widget id="Rule_Label" type="TEXT">
+                  <initial-value>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getLabel();}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label>Label</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                  <label-style>label_Edit_Rule_Edit_Rule_Rule_Label</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Rule_Label</style>
+                  <variable-bound>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getLabel();}</variable-bound>
+                </widget>
+                <widget id="Description" type="MESSAGE">
+                  <initial-value>
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getDescription();}</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <variable-bound>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+return ruleObj.getDescription();}</variable-bound>
+                </widget>
+                <widget id="Exceptions" type="TEXT">
+                  <initial-value>
+                    <expression>Exceptions</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Exceptions</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Exceptions</style>
+                  <variable-bound>Exceptions</variable-bound>
+                </widget>
+                <widget id="Exceptions_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+import org.ow2.bonita.light.LightProcessDefinition;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+
+Set&lt;ProcessDefinitionUUID&gt; processesUUID = new HashSet&lt;ProcessDefinitionUUID&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getItems()){
+	String UUID=atual;
+	ProcessDefinitionUUID novo= new ProcessDefinitionUUID(atual);
+	processesUUID.add(novo);
+}
+
+Set&lt;LightProcessDefinition&gt; processosObj=AccessorUtil.getQueryDefinitionAPI().getLightProcesses(processesUUID);
+Map&lt;String,String&gt; processosInfo=new HashMap&lt;String,String&gt;();
+
+for(LightProcessDefinition atual: processosObj){
+	processosInfo.put(atual.getUUID().getValue(), atual.getUUID().getValue());
+}
+
+
+return processosInfo;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewException" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="NewExceptionName" type="LISTBOX_SIMPLE">
+                  <available-values>
+                    <expression>${import java.util.Set;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
+import org.ow2.bonita.facade.*
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
+import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.util.BonitaConstants;
+import org.ow2.bonita.util.SimpleCallbackHandler;
+
+QueryDefinitionAPI api = AccessorUtil.getQueryDefinitionAPI();
+Set &lt;ProcessDefinition&gt; he = api.getProcesses();
+Set &lt;ProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getProcesses();
+List&lt;String&gt; UUIDs = []
+
+processes.each{
+UUIDs.add(it.getUUID())
+}
+
+return UUIDs}</expression>
+                  </available-values>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <title>Select a process</title>
+                </widget>
+                <widget id="RemoveSelectedException" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Users" type="TEXT">
+                  <initial-value>
+                    <expression>Users</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Users</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Users</style>
+                  <variable-bound>Users</variable-bound>
+                </widget>
+                <widget id="User_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+
+
+
+
+
+Map&lt;String,String&gt; users=new HashMap&lt;String,String&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getUsers()){
+	String UUID=atual;
+	User userObj=AccessorUtil.getIdentityAPI().getUserByUUID(UUID);
+	String name=userObj.getUsername();
+	users.put(name, UUID);	
+}
+
+return users;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewUser" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="newUserName" type="TEXTBOX">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <title>Inser user name (ex: admin)</title>
+                </widget>
+                <widget id="RemoveSelecteduser" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Roles" type="TEXT">
+                  <initial-value>
+                    <expression>Roles</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Roles</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Roles</style>
+                  <variable-bound>Roles</variable-bound>
+                </widget>
+                <widget id="Roles_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Role;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+Map&lt;String,String&gt; roles=new HashMap&lt;String,String&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getRoles()){
+	String UUID=atual;
+	Role roleObj=AccessorUtil.getIdentityAPI().getRoleByUUID(UUID);
+	String name=roleObj.getName();
+	roles.put(name, UUID);
+}
+
+return roles;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewRole" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="newRoleName" type="TEXTBOX">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <title>Insert Role name (ex: myrole)</title>
+                </widget>
+                <widget id="RemoveSelectedRole" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Groups" type="TEXT">
+                  <initial-value>
+                    <expression>Groups</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Groups</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Groups</style>
+                  <variable-bound>Groups</variable-bound>
+                </widget>
+                <widget id="Groups_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Group;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+Map&lt;String,String&gt; groups=new HashMap&lt;String,String&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getGroups()){
+	String UUID=atual;
+	Group groupObj=AccessorUtil.getIdentityAPI().getGroupByUUID(UUID);
+	
+	name=getGroupPath(groupObj);
+
+	groups.put(name, UUID);
+}
+
+//Creating path (Don't know if this is the best way)
+String getGroupPath(Group groupObj){	
+	String name=groupObj.getName();
+	Group parent=groupObj.getParentGroup();
+	while (parent != null){
+		name=parent.getName()+"/"+name;
+		
+		parent=parent.getParentGroup();
+	}
+	name="/"+name;
+	
+	return name;
+}
+
+return groups;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewGroup" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="newGroupName" type="TEXTBOX">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <title>Insert group path (ex: /platform/admin)</title>
+                </widget>
+                <widget id="RemoveSelectedGroup" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Memberships" type="TEXT">
+                  <initial-value>
+                    <expression>Memberships</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Memberships</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Memberships</style>
+                  <variable-bound>Memberships</variable-bound>
+                </widget>
+                <widget id="Memberships_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Membership;
+import org.ow2.bonita.facade.identity.Group;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+
+Map&lt;String,String&gt; memberships=new HashMap&lt;String,String&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getMemberships()){
+	String UUID=atual;
+	Membership membershipObj=AccessorUtil.getIdentityAPI().getMembershipByUUID(UUID);
+	
+	String name=getGroupPath(membershipObj.getGroup())+":"+membershipObj.getRole().getName();	
+	memberships.put(name, UUID);
+}
+
+
+
+
+//////////////////////////////////////
+
+//Creating path (Don't know if this is the best way)
+String getGroupPath(Group groupObj){
+	String name=groupObj.getName();
+	Group parent=groupObj.getParentGroup();
+	while (parent != null){
+		name=parent.getName()+"/"+name;
+		
+		parent=parent.getParentGroup();
+	}
+	name="/"+name;
+	
+	return name;
+}
+
+//////////////////////////////////////
+
+return memberships;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewMembership" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="newMembershipName" type="TEXTBOX">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                  <title>Insert membership name (ex: /group:role)</title>
+                </widget>
+                <widget id="RemoveSelectedMembership" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Entities" type="TEXT">
+                  <initial-value>
+                    <expression>Entities</expression>
+                  </initial-value>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <label-style>label_Edit_Rule_Edit_Rule_Entities</label-style>
+                  <style>input_Edit_Rule_Edit_Rule_Entities</style>
+                  <variable-bound>Entities</variable-bound>
+                </widget>
+                <widget id="Entities_List" type="RADIOBUTTON_GROUP">
+                  <available-values>
+                    <expression>${import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Group;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+Map&lt;String,String&gt; entities=new HashMap&lt;String,String&gt;();
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+for(String atual: ruleObj.getEntities()){
+	String UUID=atual;
+	String name=atual;//Does an antity has a name?
+
+	entities.put(name, UUID);
+}
+
+return entities;}</expression>
+                  </available-values>
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="AddNewEntity" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Add New</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="newEntityName" type="TEXTBOX">
+                  <allow-html-in-field>false</allow-html-in-field>
+                  <mandatory>false</mandatory>
+                  <readonly>false</readonly>
+                </widget>
+                <widget id="RemoveSelectedEntity" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Remove Selected</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+                <widget id="Back" type="BUTTON_SUBMIT">
+                  <label-button>false</label-button>
+                  <label>Back</label>
+                  <allow-html-in-label>false</allow-html-in-label>
+                </widget>
+              </widgets>
+              <actions>
+                <action type="SET_VARIABLE">
+                  <variable>action</variable>
+                  <variable-type>ACTIVITY_VARIABLE</variable-type>
+                  <expression>${"back"}</expression>
+                  <submit-button>Back</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+User userObj=AccessorUtil.getIdentityAPI().findUserByUserName(field_newUserName);
+
+AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),Arrays.asList(userObj.getUUID()),null,null,null, null);}</expression>
+                  <submit-button>AddNewUser</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),Arrays.asList(field_User_List),null,null,null, null);}</expression>
+                  <submit-button>RemoveSelecteduser</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+Set&lt;ProcessDefinitionUUID&gt; processes=new HashSet&lt;ProcessDefinitionUUID&gt;();
+processes.add(new ProcessDefinitionUUID(field_NewExceptionName));
+
+AccessorUtil.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), processes);}</expression>
+                  <submit-button>AddNewException</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+
+
+//Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+Set&lt;ProcessDefinitionUUID&gt; processes=new HashSet&lt;ProcessDefinitionUUID&gt;();
+processes.add(new ProcessDefinitionUUID(field_Exceptions_List));
+
+AccessorUtil.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,processes);}</expression>
+                  <submit-button>RemoveSelectedException</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Role;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+Role roleObj=AccessorUtil.getIdentityAPI().findRoleByName(field_newRoleName);
+
+AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,Arrays.asList(roleObj.getUUID()),null,null, null);}</expression>
+                  <submit-button>AddNewRole</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,Arrays.asList(field_Roles_List),null,null, null);}</expression>
+                  <submit-button>RemoveSelectedRole</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Group;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+List&lt;String&gt; path=getGroupPathAsList(field_newGroupName);
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+Group groupObj=AccessorUtil.getIdentityAPI().getGroupUsingPath(path);
+
+AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,Arrays.asList(groupObj.getUUID()),null, null);
+
+
+///////////////////////////////////////
+
+List&lt;String&gt; getGroupPathAsList(String pathStr){
+	
+	List&lt;String&gt; pathList=pathStr.split("/");
+	List&lt;String&gt; validPath=new ArrayList&lt;String&gt;();
+	
+	//Avoiding problems with "/" at begin or end.
+	for(String atual: pathList){
+		if (atual!=null &amp;&amp; !atual.equals("")){
+			validPath.add(atual);
+		}
+	}
+	
+	return validPath;
+}}</expression>
+                  <submit-button>AddNewGroup</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,Arrays.asList(field_Groups_List),null, null);}</expression>
+                  <submit-button>RemoveSelectedGroup</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.ow2.bonita.connector.core.ConnectorError;
+import org.ow2.bonita.connector.core.ProcessConnector;
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.identity.Membership;
+import org.ow2.bonita.facade.identity.Group;
+import org.ow2.bonita.facade.identity.Role;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+
+List&lt;String&gt; memberStrings=field_newMembershipName.split(":");
+
+List&lt;String&gt; path=getGroupPathAsList(memberStrings.get(0));
+
+
+Group groupObj=AccessorUtil.getIdentityAPI().getGroupUsingPath(path);
+Role roleObj=AccessorUtil.getIdentityAPI().findRoleByName(memberStrings.get(1));
+
+
+String roleUUID=roleObj.getUUID();
+String groupUUID=groupObj.getUUID();
+Membership membershipObj=AccessorUtil.getIdentityAPI().getMembershipForRoleAndGroup(roleUUID, groupUUID);
+
+AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,null,Arrays.asList(membershipObj.getUUID()), null);
+
+
+
+////////////////////////////
+
+List&lt;String&gt; getGroupPathAsList(String pathStr){
+	List&lt;String&gt; pathList=pathStr.split("/");
+	List&lt;String&gt; validPath=new ArrayList&lt;String&gt;();
+	
+	//Avoiding problems with "/" at begin or end.
+	for(String atual: pathList){
+		if (atual!=null &amp;&amp; !atual.equals("")){
+			validPath.add(atual);
+		}
+	}
+	
+	return validPath;
+}}</expression>
+                  <submit-button>AddNewMembership</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,null,Arrays.asList(field_Memberships_List), null);}</expression>
+                  <submit-button>RemoveSelectedMembership</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+String entity=field_newEntityName;//WT* is an entity? Just a String O_o?
+
+AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,null,null, Arrays.asList(entity));}</expression>
+                  <submit-button>AddNewEntity</submit-button>
+                </action>
+                <action type="EXECUTE_SCRIPT">
+                  <expression>${import java.util.Arrays;
+
+import org.ow2.bonita.facade.identity.User;
+import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.util.AccessorUtil;
+
+
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,null,null, Arrays.asList(field_Entities_List));}</expression>
+                  <submit-button>RemoveSelectedEntity</submit-button>
+                </action>
+              </actions>
+            </page>
+          </pages>
+        </pageflow>
+      </activity>
+    </activities>
+  </process>
+</forms-definition>

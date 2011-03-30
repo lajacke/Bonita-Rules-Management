@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:form="http://www.bonitasoft.org/ns/studio/form" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:process="http://www.bonitasoft.org/ns/studio/process">
+  <process:MainProcess xmi:id="_HG3IQVY_EeC5z_TevNZODg" name="Rules_Management_Process" label="Rules Management Process" bonitaVersion="5.4" bonitaModelVersion="5.4">
+    <elements xmi:type="process:Pool" xmi:id="_HLGIAFY_EeC5z_TevNZODg" name="Rules_Management_Process" label="Rules Management Process" welcomePageInternal="false" entryPageFlowType="SKIP">
+      <elements xmi:type="process:Lane" xmi:id="_ibsrEFZCEeCgoPpETj3jqA" name="General" label="General" user="" groups="_HPanUFY_EeC5z_TevNZODg">
+        <elements xmi:type="process:Task" xmi:id="_HOgoYFY_EeC5z_TevNZODg" name="Menu" label="Menu" outgoing="_YUX9IFY_EeC5z_TevNZODg _4BRacFZEEeCgoPpETj3jqA _vE3-0FZSEeC6o80fdJb_6A _kFl_EFZYEeC6o80fdJb_6A" incoming="_HQ4m8FY_EeC5z_TevNZODg _9cGrcFZEEeCgoPpETj3jqA __spCUFZSEeC6o80fdJb_6A _9cyl4FceEeCKUIPuZP_Kbg _O6i5YFcjEeCKUIPuZP_Kbg" user="" groups="_HPanUFY_EeC5z_TevNZODg">
+          <data xmi:type="process:Data" xmi:id="_7w8G8FZAEeC5z_TevNZODg" documentation="Menu Options" name="menu_Options" label="Menu Options" dataType="_6VxwgFZAEeC5z_TevNZODg" defaultValue=""/>
+          <form xmi:type="form:Form" xmi:id="_s8SLgFcfEeCKUIPuZP_Kbg" name="Menu" label="Menu" nLine="6" pageLabel="Menu">
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_wYGpgFo9EeCk-p98EtLvew" name="Edit_Base_Rules" label="Edit Base Rules" displayLabel="Edit Base Rules">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_wYN-QVo9EeCk-p98EtLvew"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_AYN3IFo-EeCk-p98EtLvew" exprScript="Edit_Base" setVarScript="menu_Options"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_w3MZQFo9EeCk-p98EtLvew" name="Create_Rule" label="Create Rule" displayLabel="Create Rule">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_w3QqsFo9EeCk-p98EtLvew" line="2"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_G2kaoFo-EeCk-p98EtLvew" exprScript="Add_Rule" setVarScript="menu_Options"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_yaL2AFo9EeCk-p98EtLvew" name="Edit_Rules" label="Edit Rules" displayLabel="Edit Rules">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_yaQHcVo9EeCk-p98EtLvew" line="3"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_Hgs8wFo-EeCk-p98EtLvew" exprScript="Edit_Rules" setVarScript="menu_Options"/>
+            </widgets>
+            <widgets xmi:type="form:HtmlWidget" xmi:id="_8-sWkFo9EeCk-p98EtLvew" name="HTML_widget1" label="HTML widget1">
+              <script xmi:type="form:GroovyScript" xmi:id="_9pHzoFo9EeCk-p98EtLvew" inputScript="-------------------------------"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_8-0SYFo9EeCk-p98EtLvew" line="1"/>
+            </widgets>
+            <widgets xmi:type="form:HtmlWidget" xmi:id="_jvGPsFo_EeCk-p98EtLvew" name="HTML_widget2" label="HTML widget2">
+              <script xmi:type="form:GroovyScript" xmi:id="_jvGPsVo_EeCk-p98EtLvew" inputScript="-------------------------------"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_jvGPslo_EeCk-p98EtLvew" line="4"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_mcGBcFo_EeCk-p98EtLvew" name="Exit" label="Exit" displayLabel="Exit">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_mcLhAVo_EeCk-p98EtLvew" line="5"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_oYnYgFo_EeCk-p98EtLvew" exprScript="Exit" setVarScript="menu_Options"/>
+            </widgets>
+          </form>
+        </elements>
+        <elements xmi:type="process:StartEvent" xmi:id="_HO8tQFY_EeC5z_TevNZODg" name="Start" label="Start" outgoing="_HQ4m8FY_EeC5z_TevNZODg"/>
+        <elements xmi:type="process:EndTerminatedEvent" xmi:id="_UY2iwFY_EeC5z_TevNZODg" name="End" label="End" incoming="_YUX9IFY_EeC5z_TevNZODg"/>
+        <elements xmi:type="process:Task" xmi:id="_BJe_UFZJEeCgoPpETj3jqA" name="Step1" label="Edit Base" outgoing="_9cGrcFZEEeCgoPpETj3jqA _VWqbkFZPEeC6o80fdJb_6A" incoming="_4BRacFZEEeCgoPpETj3jqA _VWqbkFZPEeC6o80fdJb_6A" user="">
+          <textAnnotationAttachment xmi:type="process:TextAnnotationAttachment" xmi:id="_MHPpMFZQEeC6o80fdJb_6A" source="_MGuEwFZQEeC6o80fdJb_6A"/>
+          <data xmi:type="process:Data" xmi:id="_Uh3hkFZPEeC6o80fdJb_6A" name="action" label="Action" dataType="_HG3vUlY_EeC5z_TevNZODg" defaultValue="modify"/>
+          <form xmi:type="form:Form" xmi:id="_DzZA0FZJEeCgoPpETj3jqA" name="Edit" label="Edit" nColumn="2" nLine="3" pageLabel="Edit">
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_DzZA0VZJEeCgoPpETj3jqA" name="Back" label="Back" displayLabel="Back">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_DzZA0lZJEeCgoPpETj3jqA" line="2"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_gez0sFZPEeC6o80fdJb_6A" exprScript="back" setVarScript="action"/>
+            </widgets>
+            <widgets xmi:type="form:SelectFormField" xmi:id="_HXYsAFZJEeCgoPpETj3jqA" name="Rule" label="Rule" displayLabel="Rule">
+              <script xmi:type="form:GroovyScript" xmi:id="_R6O_sFZJEeCgoPpETj3jqA" inputScript="${import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;&#xA;return Arrays.asList(RuleType.values());}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_HXjrIFZJEeCgoPpETj3jqA" line="1"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_TZRJgFZJEeCgoPpETj3jqA" name="Option" label="Option" displayLabel="Radio buttons1" showDisplayLabel="false" defaultValue="Deny">
+              <script xmi:type="form:GroovyScript" xmi:id="_UAGgAFZJEeCgoPpETj3jqA" inputScript="${[&quot;Allow&quot;,&quot;Deny&quot;]}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_TZXQIFZJEeCgoPpETj3jqA" line="1" column="1"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_uitcAFZJEeCgoPpETj3jqA" name="Modify" label="Modify" displayLabel="Modify">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_uixtcFZJEeCgoPpETj3jqA" line="2" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_0d4Z8FZJEeCgoPpETj3jqA" exprScript="${import org.ow2.bonita.facade.*;&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;import org.ow2.bonita.facade.IdentityAPI;&#xA;import org.ow2.bonita.facade.uuid.AbstractUUID;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xA;import org.apache.directory.groovyldap.*&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.impl.StandardAPIAccessorImpl;&#xA;import org.ow2.bonita.facade.privilege.PrivilegePolicy;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;&#xA;PrivilegePolicy baserule;&#xA;switch(field_Option)&#xA;{&#xA;case &quot;Allow&quot; :baserule = PrivilegePolicy.ALLOW_BY_DEFAULT;  break;&#xA;case &quot;Deny&quot;:baserule = PrivilegePolicy.DENY_BY_DEFAULT; break;&#xA;}&#xA;&#xA;AccessorUtil.getManagementAPI().setRuleTypePolicy(RuleType.valueOf(field_Rule), baserule);}"/>
+            </widgets>
+            <widgets xmi:type="form:Table" xmi:id="_oMGqsFo4EeCk-p98EtLvew" name="Lista" label="Lista" displayLabel="Table1" showDisplayLabel="false" firstRowIsHeader="true" cells="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000277040000000A7371007E00000000000277040000000A74000261317400026231787371007E00000000000277040000000A740002613274000262327878" horizontalHeader="${[&quot;RuleType&quot;,&quot;Policy&quot;]}" verticalHeader="" columnForInitialSelectionIndex="">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3RRysFo7EeCk-p98EtLvew" key="table_headers_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_oMGqsVo4EeCk-p98EtLvew" inputScript="${import org.ow2.bonita.facade.privilege.PrivilegePolicy;&#xA;&#x9;import org.ow2.bonita.facade.*;&#xA;&#x9;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xA;&#x9;import org.ow2.bonita.util.AccessorUtil;&#xA;&#x9;import org.ow2.bonita.facade.privilege.Rule;&#xA;&#x9;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;&#x9;&#xA;&#x9;&#xA;&#x9;List&lt;List&lt;String>> retorno=new ArrayList&lt;List&lt;String>>();&#xA;&#x9;&#x9;&#x9;&#xA;&#x9;List&lt;RuleType> all= Arrays.asList(RuleType.values());&#xA;&#x9;&#xA;&#x9;for(RuleType atual: all){&#xA;&#x9;&#x9;valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;retorno.add([atual.toString(),valorStr]);&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;return retorno;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_oMGqslo4EeCk-p98EtLvew" horizontalSpan="2"/>
+            </widgets>
+          </form>
+        </elements>
+        <elements xmi:type="process:TextAnnotation" xmi:id="_MGuEwFZQEeC6o80fdJb_6A" text="This step allows to modify the base rule.&#xD;&#xA;Allow by default : Every user except the ones defined in a rule will be able execute the action.&#xD;&#xA;Deny by default : Only the defined users will be able to execute the action.&#xA;&#xD;&#xA;Please BE CAREFUL when setting to &quot;deny by default&quot; as it will also deny the access to this process if you didn't set any exception ( you can still use that current instance if you made a mistake so don't quit it until you're sure your rights are fine) ."/>
+        <elements xmi:type="process:Task" xmi:id="_85scwFZWEeC6o80fdJb_6A" name="Step2" label="List Rules" outgoing="__spCUFZSEeC6o80fdJb_6A _9qc5UVccEeCxt7Rp_zrNlA _5UMOQVcdEeCKUIPuZP_Kbg" incoming="_vE3-0FZSEeC6o80fdJb_6A _9qc5UVccEeCxt7Rp_zrNlA">
+          <data xmi:type="process:Data" xmi:id="_HXwFEFcdEeCxt7Rp_zrNlA" name="action" label="action" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <form xmi:type="form:Form" xmi:id="_MMDzkFZXEeC6o80fdJb_6A" name="List_Rules" label="List Rules" nColumn="4" nLine="3" pageLabel="List Rules">
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_MMDzkVZXEeC6o80fdJb_6A" name="Back" label="Back" displayLabel="Back">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_MMDzklZXEeC6o80fdJb_6A" line="2" column="2" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:Table" xmi:id="_PiqjAFZXEeC6o80fdJb_6A" name="Rules" label="Rules" displayLabel="Rules" showDisplayLabel="false" firstRowIsHeader="true" cells="ACED0005737200136A6176612E7574696C2E41727261794C6973747881D21D99C7619D03000149000473697A6578700000000077040000000A78" horizontalHeader="${[&quot;Name&quot;,&quot;Label&quot;,&quot;Users&quot;,&quot;Roles&quot;,&quot;Groups&quot;,&quot;Entities&quot;,&quot;Type&quot;]}">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_PiqjAVZXEeC6o80fdJb_6A" key="table_headers_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_PiqjAlZXEeC6o80fdJb_6A" inputScript="${import org.ow2.bonita.facade.*;&#xD;&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xD;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xD;&#xA;import org.ow2.bonita.facade.IdentityAPI;&#xD;&#xA;import org.ow2.bonita.facade.uuid.AbstractUUID;&#xD;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xD;&#xA;import org.apache.directory.groovyldap.*&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule&#xD;&#xA;&#xD;&#xA;List&lt;Rule> rules = AccessorUtil.getManagementAPI().getAllRules();&#xD;&#xA;List&lt;List&lt;String>> output = new ArrayList&lt;List&lt;String>>();&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;for(rule in rules)&#xD;&#xA;{&#xD;&#xA;&#x9;List&lt;String> ruleslist=[];&#xD;&#xA;&#x9;ruleslist.add(rule.getName());&#xD;&#xA;&#x9;ruleslist.add(rule.getLabel());&#xD;&#xA;&#x9;ruleslist.add(rule.getUsers().size());&#xD;&#xA;&#x9;ruleslist.add(rule.getRoles().size());&#xD;&#xA;&#x9;ruleslist.add(rule.getGroups().size());&#xD;&#xA;&#x9;ruleslist.add(rule.getEntities().size());&#xD;&#xA;&#x9;ruleslist.add(rule.getType().toString())&#xD;&#xA;&#x9;output.add(ruleslist)&#xD;&#xA;}&#xD;&#xA;return output;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_PiqjA1ZXEeC6o80fdJb_6A" horizontalSpan="4"/>
+            </widgets>
+            <widgets xmi:type="form:SelectFormField" xmi:id="_EBUxUFZYEeC6o80fdJb_6A" name="Rule" label="Rule" displayLabel="Rule">
+              <script xmi:type="form:GroovyScript" xmi:id="_EBUxUVZYEeC6o80fdJb_6A" inputScript="${import org.ow2.bonita.facade.*;&#xD;&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xD;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xD;&#xA;import org.ow2.bonita.facade.IdentityAPI;&#xD;&#xA;import org.ow2.bonita.facade.uuid.AbstractUUID;&#xD;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xD;&#xA;import org.apache.directory.groovyldap.*&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule&#xD;&#xA;&#xD;&#xA;List&lt;Rule> rules = AccessorUtil.getManagementAPI().getAllRules();&#xD;&#xA;&#xD;&#xA;List&lt;String> output = [];&#xD;&#xA;for(rule in rules)&#xD;&#xA;{&#xD;&#xA;output.add(rule.getName().toString())&#xD;&#xA;}&#xD;&#xA;return output;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_EBUxUlZYEeC6o80fdJb_6A" line="1" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_O-b_IFZYEeC6o80fdJb_6A" name="Delete" label="Delete" displayLabel="Delete">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_O-mXMFZYEeC6o80fdJb_6A" line="1" column="3"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_SMtR8FZYEeC6o80fdJb_6A" exprScript="${import org.ow2.bonita.facade.*;&#xD;&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xD;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xD;&#xA;import org.ow2.bonita.facade.IdentityAPI;&#xD;&#xA;import org.ow2.bonita.facade.uuid.AbstractUUID;&#xD;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xD;&#xA;import org.apache.directory.groovyldap.*&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType&#xD;&#xA;import org.ow2.bonita.facade.privilege.Rule&#xD;&#xA;&#xD;&#xA;List&lt;Rule> rules = AccessorUtil.getManagementAPI().getAllRules();&#xD;&#xA;String ruleUUID=&quot;&quot;;&#xD;&#xA;for(Rule atual:rules){&#xD;&#xA;&#x9;if(atual.getName().equals(field_Rule)){&#xD;&#xA;&#x9;&#x9;ruleUUID=atual.getUUID();&#xD;&#xA;&#x9;&#x9;break;&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;AccessorUtil.getManagementAPI().deleteRuleByUUID(ruleUUID);&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;return &quot;remove&quot;;}" setVarScript="action"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_S_9B0FceEeCKUIPuZP_Kbg" name="Edit" label="Edit" displayLabel="Edit">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_TARx8FceEeCKUIPuZP_Kbg" line="1" column="2"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_u1lE4FceEeCKUIPuZP_Kbg" exprScript="${import org.ow2.bonita.facade.*;&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;import org.ow2.bonita.facade.IdentityAPI;&#xA;import org.ow2.bonita.facade.uuid.AbstractUUID;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xA;import org.apache.directory.groovyldap.*&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType&#xA;import org.ow2.bonita.facade.privilege.Rule&#xA;&#xA;List&lt;Rule> rules = AccessorUtil.getManagementAPI().getAllRules();&#xA;&#xA;for(Rule atual:rules){&#xA;&#x9;if(atual.getName().equals(field_Rule)){&#xA;&#x9;&#x9;selectedRule=atual.getUUID();&#xA;&#x9;&#x9;break;&#xA;&#x9;}&#xA;}&#xA;&#xA;action=&quot;edit&quot;;}"/>
+            </widgets>
+          </form>
+        </elements>
+        <elements xmi:type="process:Task" xmi:id="_XNvwoFZdEeC6o80fdJb_6A" name="Step3" label="Create Rule" outgoing="__-b4sFcdEeCKUIPuZP_Kbg _O6i5YFcjEeCKUIPuZP_Kbg" incoming="_kFl_EFZYEeC6o80fdJb_6A">
+          <data xmi:type="process:Data" xmi:id="_WESjQFcjEeCKUIPuZP_Kbg" name="action" label="action" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <data xmi:type="process:Data" xmi:id="_PEl4MFZdEeC6o80fdJb_6A" name="description" label="Description" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <data xmi:type="process:Data" xmi:id="_OE0dQFZdEeC6o80fdJb_6A" name="label" label="Label" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <data xmi:type="process:Data" xmi:id="_Nj_BEFZdEeC6o80fdJb_6A" name="name" label="Name" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <data xmi:type="process:JavaObjectData" xmi:id="_UteMQFZdEeC6o80fdJb_6A" name="ruleType" label="RuleType" dataType="_HG3vVFY_EeC5z_TevNZODg" defaultValue="" className="org.ow2.bonita.facade.privilege.Rule$RuleType"/>
+          <form xmi:type="form:Form" xmi:id="_iR4zgFZdEeC6o80fdJb_6A" name="Create_Rule" label="Create Rule" nColumn="2" nLine="5" pageLabel="Create Rule">
+            <widgets xmi:type="form:TextFormField" xmi:id="_iR4zhFZdEeC6o80fdJb_6A" name="label" label="Label" displayLabel="Label">
+              <script xmi:type="form:GroovyScript" xmi:id="_iR4zhVZdEeC6o80fdJb_6A" inputScript="${label}" setVarScript="label"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_iR4zhlZdEeC6o80fdJb_6A" line="1" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_iR4zh1ZdEeC6o80fdJb_6A" name="name" label="Name" displayLabel="Name">
+              <script xmi:type="form:GroovyScript" xmi:id="_iR4ziFZdEeC6o80fdJb_6A" inputScript="${name}" setVarScript="name"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_iR4ziVZdEeC6o80fdJb_6A" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_iR4zilZdEeC6o80fdJb_6A" name="Create" label="Create" displayLabel="Create">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_iR4zi1ZdEeC6o80fdJb_6A" line="4" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_kelpsFZfEeC6o80fdJb_6A" exprScript="${import java.util.List;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;&#xA;Rule newRule=AccessorUtil.getManagementAPI().createRule(name, label, description, RuleType.valueOf(ruleType));&#xA;selectedRule=newRule.getUUID();}"/>
+            </widgets>
+            <widgets xmi:type="form:SelectFormField" xmi:id="_op--AFZdEeC6o80fdJb_6A" name="Rule_Type" label="Rule Type" displayLabel="Rule Type">
+              <script xmi:type="form:GroovyScript" xmi:id="_q0-18FZdEeC6o80fdJb_6A" inputScript="${import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;&#xA;return Arrays.asList(RuleType.values());}" setVarScript="ruleType"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_oqEdkVZdEeC6o80fdJb_6A" line="2" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_qpoFEFZeEeC6o80fdJb_6A" name="Back" label="Back" displayLabel="Back">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_qp05YFZeEeC6o80fdJb_6A" line="4"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_aZ__QFcjEeCKUIPuZP_Kbg" exprScript="${&quot;back&quot;}" setVarScript="action"/>
+            </widgets>
+            <widgets xmi:type="form:TextAreaFormField" xmi:id="_t1POsFo-EeCk-p98EtLvew" name="description" label="Description" displayLabel="Description">
+              <script xmi:type="form:GroovyScript" xmi:id="_iR4zglZdEeC6o80fdJb_6A" inputScript="${description}" setVarScript="description"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_iR4zg1ZdEeC6o80fdJb_6A" line="3" horizontalSpan="2"/>
+            </widgets>
+          </form>
+        </elements>
+        <elements xmi:type="process:Task" xmi:id="_1OthgFZrEeC6o80fdJb_6A" name="Edit_Rule" label="Edit Rule" outgoing="_9cyl4FceEeCKUIPuZP_Kbg _Pr-xoFl5EeCKdYca1oZmlg" incoming="_5UMOQVcdEeCKUIPuZP_Kbg __-b4sFcdEeCKUIPuZP_Kbg _Pr-xoFl5EeCKdYca1oZmlg" user="">
+          <data xmi:type="process:Data" xmi:id="_I33iEFcfEeCKUIPuZP_Kbg" name="action" label="action" dataType="_HG3vUlY_EeC5z_TevNZODg"/>
+          <form xmi:type="form:Form" xmi:id="_YGfBUFcfEeCKUIPuZP_Kbg" name="Edit_Rule" label="Edit Rule" nColumn="3" nLine="23" pageLabel="Edit Rule">
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_YGfBUVcfEeCKUIPuZP_Kbg" name="Back" label="Back" displayLabel="Back">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_YGfBUlcfEeCKUIPuZP_Kbg" line="22"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_Y41EQFcfEeCKUIPuZP_Kbg" exprScript="${&quot;back&quot;}" setVarScript="action"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_kqFH8FcjEeCKUIPuZP_Kbg" name="RuleUUID" label="RuleUUID" displayLabel="UUID">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-kjiIFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_m6vjAFcjEeCKUIPuZP_Kbg" inputScript="${selectedRule}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_kqO481cjEeCKUIPuZP_Kbg" line="1" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_yzIbYFclEeCKUIPuZP_Kbg" name="Users" label="Users" displayLabel="Users" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0A4IAFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7yZjkFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_y0lM4FclEeCKUIPuZP_Kbg" inputScript="Users"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_yzQ-QVclEeCKUIPuZP_Kbg" line="7"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_PIH7AFcmEeCKUIPuZP_Kbg" name="Roles" label="Roles" displayLabel="Roles" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0ZwiEFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8HdNkFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_Stv94FcmEeCKUIPuZP_Kbg" inputScript="Roles"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_PIK-UVcmEeCKUIPuZP_Kbg" line="10"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_XOOfcFcmEeCKUIPuZP_Kbg" name="Groups" label="Groups" displayLabel="Groups" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0zAIgFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_8fy1EFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_XaYsIFcmEeCKUIPuZP_Kbg" inputScript="Groups"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_XOSJ0FcmEeCKUIPuZP_Kbg" line="13"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_yPyBQFcmEeCKUIPuZP_Kbg" name="Memberships" label="Memberships" displayLabel="Memberships" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1LaogFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_81sMkFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_4gKaMFcmEeCKUIPuZP_Kbg" inputScript="Memberships"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_yP4H4FcmEeCKUIPuZP_Kbg" line="16"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_8-7EgFcmEeCKUIPuZP_Kbg" name="Entities" label="Entities" displayLabel="Entities" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_1g3UEFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_9KmFkFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_DBFbQFcnEeCKUIPuZP_Kbg" inputScript="Entities"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_8--u4VcmEeCKUIPuZP_Kbg" line="19"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_saJJkFlVEeCKdYca1oZmlg" name="Rule_Info" label="Rule Info" displayLabel="Rule Info" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="__2ttkFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_A7k7YFlYEeCKdYca1oZmlg"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_saquAFlVEeCKdYca1oZmlg"/>
+            </widgets>
+            <widgets xmi:type="form:MessageInfo" xmi:id="_PyqWUFlWEeCKdYca1oZmlg" name="Description" label="Description">
+              <script xmi:type="form:GroovyScript" xmi:id="_P9RD0FlWEeCKdYca1oZmlg" inputScript="${import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;return ruleObj.getDescription();}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_Py18gVlWEeCKdYca1oZmlg" line="3" horizontalSpan="3"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="__LKtsFlXEeCKdYca1oZmlg" name="Rule_Name" label="Rule Name" displayLabel="Name">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-OMQkFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_4xKwoFlVEeCKdYca1oZmlg" inputScript="${import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;return ruleObj.getName();}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_3ZuckFlVEeCKdYca1oZmlg" line="2" horizontalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="__mZ4MFlXEeCKdYca1oZmlg" name="Rule_Label" label="Rule Label" displayLabel="Label">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="__Jn-EFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_At6kwFlWEeCKdYca1oZmlg" inputScript="${import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;return ruleObj.getLabel();}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_3xkU0FlVEeCKdYca1oZmlg" line="2" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_vd_GUFlbEeCKdYca1oZmlg" name="Roles_List" label="Roles List" displayLabel="Roles List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_voE2cFlbEeCKdYca1oZmlg" inputScript="${import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Role;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;Map&lt;String,String> roles=new HashMap&lt;String,String>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getRoles()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;Role roleObj=AccessorUtil.getIdentityAPI().getRoleByUUID(UUID);&#xA;&#x9;String name=roleObj.getName();&#xA;&#x9;roles.put(name, UUID);&#xA;}&#xA;&#xA;return roles;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_veHpMllbEeCKdYca1oZmlg" line="11" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_xVASUFlbEeCKdYca1oZmlg" name="User_List" label="User List" displayLabel="user List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_xeXCoFlbEeCKdYca1oZmlg" inputScript="${import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;Map&lt;String,String> users=new HashMap&lt;String,String>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getUsers()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;User userObj=AccessorUtil.getIdentityAPI().getUserByUUID(UUID);&#xA;&#x9;String name=userObj.getUsername();&#xA;&#x9;users.put(name, UUID);&#x9;&#xA;}&#xA;&#xA;return users;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_xVFK0FlbEeCKdYca1oZmlg" line="8" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_jhr28FlcEeCKdYca1oZmlg" name="Groups_List" label="Groups List" displayLabel="Groups List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_jq0k0FlcEeCKdYca1oZmlg" inputScript="${import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Group;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;Map&lt;String,String> groups=new HashMap&lt;String,String>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getGroups()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;Group groupObj=AccessorUtil.getIdentityAPI().getGroupByUUID(UUID);&#xA;&#x9;&#xA;&#x9;name=getGroupPath(groupObj);&#xA;&#xA;&#x9;groups.put(name, UUID);&#xA;}&#xA;&#xA;//Creating path (Don't know if this is the best way)&#xA;String getGroupPath(Group groupObj){&#x9;&#xA;&#x9;String name=groupObj.getName();&#xA;&#x9;Group parent=groupObj.getParentGroup();&#xA;&#x9;while (parent != null){&#xA;&#x9;&#x9;name=parent.getName()+&quot;/&quot;+name;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;parent=parent.getParentGroup();&#xA;&#x9;}&#xA;&#x9;name=&quot;/&quot;+name;&#xA;&#x9;&#xA;&#x9;return name;&#xA;}&#xA;&#xA;return groups;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_jhwvcVlcEeCKdYca1oZmlg" line="14" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_HWVmEFldEeCKdYca1oZmlg" name="RuleType" label="RuleType" displayLabel="Type">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_-27rkFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_HWVmEVldEeCKdYca1oZmlg" inputScript="${import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;return ruleObj.getType().toString()}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_HWVmElldEeCKdYca1oZmlg" line="1" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_ZLwIcFldEeCKdYca1oZmlg" name="AddNewUser" label="AddNewUser" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_ZL8VsFldEeCKdYca1oZmlg" line="8" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_epNrIFlnEeCKdYca1oZmlg" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;User userObj=AccessorUtil.getIdentityAPI().findUserByUserName(field_newUserName);&#xA;&#xA;AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),Arrays.asList(userObj.getUUID()),null,null,null, null);}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_Zv8aoFldEeCKdYca1oZmlg" name="RemoveSelecteduser" label="RemoveSelecteduser" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_ZwDvYVldEeCKdYca1oZmlg" line="9" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_ymn28Fl2EeCKdYca1oZmlg" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),Arrays.asList(field_User_List),null,null,null, null);}"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_xkoPcFlrEeCKdYca1oZmlg" name="newUserName" label="newUserName" tooltip="Inser user name (ex: admin)" displayLabel="newUserName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_x2xvYFlrEeCKdYca1oZmlg"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_xktvAVlrEeCKdYca1oZmlg" line="8" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:TextInfo" xmi:id="_1e4rQFl7EeCKdYca1oZmlg" name="Exceptions" label="Exceptions" displayLabel="Exceptions" showDisplayLabel="false">
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zcqAoFoyEeCk-p98EtLvew" key="label_css:text-bold" value="enabled"/>
+              <htmlAttributes xmi:type="ecore:EStringToStringMapEntry" xmi:id="_7czuEFoyEeCk-p98EtLvew" key="input_css:text-bold" value="enabled"/>
+              <script xmi:type="form:GroovyScript" xmi:id="_Rj400FmBEeCKdYca1oZmlg" inputScript="Exceptions"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_1fAnEVl7EeCKdYca1oZmlg" line="4"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_7OCmcFl7EeCKdYca1oZmlg" name="Exceptions_List" label="Exceptions List" displayLabel="Exceptions List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_7Wc7kFl7EeCKdYca1oZmlg" inputScript="${import java.util.HashMap;&#xA;import java.util.HashSet;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;import java.util.Set;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xA;import org.ow2.bonita.light.LightProcessDefinition;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;&#xA;Set&lt;ProcessDefinitionUUID> processesUUID = new HashSet&lt;ProcessDefinitionUUID>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getItems()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;ProcessDefinitionUUID novo= new ProcessDefinitionUUID(atual);&#xA;&#x9;processesUUID.add(novo);&#xA;}&#xA;&#xA;Set&lt;LightProcessDefinition> processosObj=AccessorUtil.getQueryDefinitionAPI().getLightProcesses(processesUUID);&#xA;Map&lt;String,String> processosInfo=new HashMap&lt;String,String>();&#xA;&#xA;for(LightProcessDefinition atual: processosObj){&#xA;&#x9;processosInfo.put(atual.getUUID().getValue(), atual.getUUID().getValue());&#xA;}&#xA;&#xA;&#xA;return processosInfo;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_7ONlkVl7EeCKdYca1oZmlg" line="5" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_Eqc2gFl8EeCKdYca1oZmlg" name="AddNewException" label="AddNewException" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_EqqR4Vl8EeCKdYca1oZmlg" line="5" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_UEBZ0FmCEeCKdYca1oZmlg" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xA;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;Set&lt;ProcessDefinitionUUID> processes=new HashSet&lt;ProcessDefinitionUUID>();&#xA;processes.add(new ProcessDefinitionUUID(field_NewExceptionName));&#xA;&#xA;AccessorUtil.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), processes);}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_E74kwFl8EeCKdYca1oZmlg" name="RemoveSelectedException" label="RemoveSelectedException" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_E7_ScFl8EeCKdYca1oZmlg" line="6" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_yh6i0FmGEeCKdYca1oZmlg" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#xA;&#xA;&#xA;//Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;Set&lt;ProcessDefinitionUUID> processes=new HashSet&lt;ProcessDefinitionUUID>();&#xA;processes.add(new ProcessDefinitionUUID(field_Exceptions_List));&#xA;&#xA;AccessorUtil.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,processes);}"/>
+            </widgets>
+            <widgets xmi:type="form:SelectFormField" xmi:id="_m5cgUFmFEeCKdYca1oZmlg" name="NewExceptionName" label="NewExceptionName" tooltip="Select a process" displayLabel="NewExceptionName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_p4o1UFmFEeCKdYca1oZmlg" inputScript="${import java.util.Set;&#xA;import javax.security.auth.login.LoginContext;&#xA;import javax.security.auth.login.LoginException;&#xA;import org.ow2.bonita.facade.*&#xA;import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;import org.ow2.bonita.util.BonitaConstants;&#xA;import org.ow2.bonita.util.SimpleCallbackHandler;&#xA;&#xA;QueryDefinitionAPI api = AccessorUtil.getQueryDefinitionAPI();&#xA;Set &lt;ProcessDefinition> he = api.getProcesses();&#xA;Set &lt;ProcessDefinition> processes = AccessorUtil.getQueryDefinitionAPI().getProcesses();&#xA;List&lt;String> UUIDs = []&#xA;&#xA;processes.each{&#xA;UUIDs.add(it.getUUID())&#xA;}&#xA;&#xA;return UUIDs}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_m5mRUVmFEeCKdYca1oZmlg" line="5" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_11nYsFoJEeCk-p98EtLvew" name="AddNewRole" label="AddNewRole" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_12LZYFoJEeCk-p98EtLvew" line="11" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_s4xcsFoNEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Role;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;Role roleObj=AccessorUtil.getIdentityAPI().findRoleByName(field_newRoleName);&#xA;&#xA;AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,Arrays.asList(roleObj.getUUID()),null,null, null);}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_2Na0sFoJEeCk-p98EtLvew" name="RemoveSelectedRole" label="RemoveSelectedRole" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_2Nma4VoJEeCk-p98EtLvew" line="12" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_aPvPkFoOEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,Arrays.asList(field_Roles_List),null,null, null);}"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_QvXFgFoOEeCk-p98EtLvew" name="newRoleName" label="newRoleName" tooltip="Insert Role name (ex: myrole)" displayLabel="newRoleName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_RS4CQFoOEeCk-p98EtLvew"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_QvhdkVoOEeCk-p98EtLvew" line="11" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_jLhXcFoREeCk-p98EtLvew" name="AddNewGroup" label="AddNewGroup" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_jLydMFoREeCk-p98EtLvew" line="14" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_v82U4FoREeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Group;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;List&lt;String> path=getGroupPathAsList(field_newGroupName);&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;Group groupObj=AccessorUtil.getIdentityAPI().getGroupUsingPath(path);&#xA;&#xA;AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,Arrays.asList(groupObj.getUUID()),null, null);&#xA;&#xA;&#xA;///////////////////////////////////////&#xA;&#xA;List&lt;String> getGroupPathAsList(String pathStr){&#xA;&#x9;&#xA;&#x9;List&lt;String> pathList=pathStr.split(&quot;/&quot;);&#xA;&#x9;List&lt;String> validPath=new ArrayList&lt;String>();&#xA;&#x9;&#xA;&#x9;//Avoiding problems with &quot;/&quot; at begin or end.&#xA;&#x9;for(String atual: pathList){&#xA;&#x9;&#x9;if (atual!=null &amp;&amp; !atual.equals(&quot;&quot;)){&#xA;&#x9;&#x9;&#x9;validPath.add(atual);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;return validPath;&#xA;}}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_jbDBMFoREeCk-p98EtLvew" name="RemoveSelectedGroup" label="RemoveSelectedGroup" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_jbOAUFoREeCk-p98EtLvew" line="15" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_15dAwFoSEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,Arrays.asList(field_Groups_List),null, null);}"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_rWiREFoREeCk-p98EtLvew" name="newGroupName" label="newGroupName" tooltip="Insert group path (ex: /platform/admin)" displayLabel="newGroupName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_r2NPoFoREeCk-p98EtLvew"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_rWvscVoREeCk-p98EtLvew" line="14" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_QHg5AFonEeCk-p98EtLvew" name="Memberships_List" label="Memberships List" displayLabel="Memberships List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_S1UjEFonEeCk-p98EtLvew" inputScript="${import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Membership;&#xA;import org.ow2.bonita.facade.identity.Group;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;&#xA;Map&lt;String,String> memberships=new HashMap&lt;String,String>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getMemberships()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;Membership membershipObj=AccessorUtil.getIdentityAPI().getMembershipByUUID(UUID);&#xA;&#x9;&#xA;&#x9;String name=getGroupPath(membershipObj.getGroup())+&quot;:&quot;+membershipObj.getRole().getName();&#x9;&#xA;&#x9;memberships.put(name, UUID);&#xA;}&#xA;&#xA;&#xA;&#xA;&#xA;//////////////////////////////////////&#xA;&#xA;//Creating path (Don't know if this is the best way)&#xA;String getGroupPath(Group groupObj){&#xA;&#x9;String name=groupObj.getName();&#xA;&#x9;Group parent=groupObj.getParentGroup();&#xA;&#x9;while (parent != null){&#xA;&#x9;&#x9;name=parent.getName()+&quot;/&quot;+name;&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;parent=parent.getParentGroup();&#xA;&#x9;}&#xA;&#x9;name=&quot;/&quot;+name;&#xA;&#x9;&#xA;&#x9;return name;&#xA;}&#xA;&#xA;//////////////////////////////////////&#xA;&#xA;return memberships;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_QHsfMFonEeCk-p98EtLvew" line="17" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_rZmUsFooEeCk-p98EtLvew" name="AddNewMembership" label="AddNewMembership" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_rZ0XIVooEeCk-p98EtLvew" line="17" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_QvDvQFopEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Membership;&#xA;import org.ow2.bonita.facade.identity.Group;&#xA;import org.ow2.bonita.facade.identity.Role;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;List&lt;String> memberStrings=field_newMembershipName.split(&quot;:&quot;);&#xA;&#xA;List&lt;String> path=getGroupPathAsList(memberStrings.get(0));&#xA;&#xA;&#xA;Group groupObj=AccessorUtil.getIdentityAPI().getGroupUsingPath(path);&#xA;Role roleObj=AccessorUtil.getIdentityAPI().findRoleByName(memberStrings.get(1));&#xA;&#xA;&#xA;String roleUUID=roleObj.getUUID();&#xA;String groupUUID=groupObj.getUUID();&#xA;Membership membershipObj=AccessorUtil.getIdentityAPI().getMembershipForRoleAndGroup(roleUUID, groupUUID);&#xA;&#xA;AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,null,Arrays.asList(membershipObj.getUUID()), null);&#xA;&#xA;&#xA;&#xA;////////////////////////////&#xA;&#xA;List&lt;String> getGroupPathAsList(String pathStr){&#xA;&#x9;List&lt;String> pathList=pathStr.split(&quot;/&quot;);&#xA;&#x9;List&lt;String> validPath=new ArrayList&lt;String>();&#xA;&#x9;&#xA;&#x9;//Avoiding problems with &quot;/&quot; at begin or end.&#xA;&#x9;for(String atual: pathList){&#xA;&#x9;&#x9;if (atual!=null &amp;&amp; !atual.equals(&quot;&quot;)){&#xA;&#x9;&#x9;&#x9;validPath.add(atual);&#xA;&#x9;&#x9;}&#xA;&#x9;}&#xA;&#x9;&#xA;&#x9;return validPath;&#xA;}}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_r-ZD0FooEeCk-p98EtLvew" name="RemoveSelectedMembership" label="RemoveSelectedMembership" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_r-i01VooEeCk-p98EtLvew" line="18" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_MObVUFosEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,null,Arrays.asList(field_Memberships_List), null);}"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_1tlF8FooEeCk-p98EtLvew" name="newMembershipName" label="newMembershipName" tooltip="Insert membership name (ex: /group:role)" displayLabel="newMembershipName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_2l5OAFooEeCk-p98EtLvew"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_1twsIFooEeCk-p98EtLvew" line="17" column="2"/>
+            </widgets>
+            <widgets xmi:type="form:RadioFormField" xmi:id="_ITPN8FozEeCk-p98EtLvew" name="Entities_List" label="Entities List" displayLabel="Entities List" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_Iag6oFozEeCk-p98EtLvew" inputScript="${import java.util.HashMap;&#xA;import java.util.List;&#xA;import java.util.Map;&#xA;&#xA;import org.ow2.bonita.connector.core.ConnectorError;&#xA;import org.ow2.bonita.connector.core.ProcessConnector;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.identity.Group;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;Map&lt;String,String> entities=new HashMap&lt;String,String>();&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;&#xA;for(String atual: ruleObj.getEntities()){&#xA;&#x9;String UUID=atual;&#xA;&#x9;String name=atual;//Does an antity has a name?&#xA;&#xA;&#x9;entities.put(name, UUID);&#xA;}&#xA;&#xA;return entities;}"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_ITbbMVozEeCk-p98EtLvew" line="20" verticalSpan="2"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_MyoxcFozEeCk-p98EtLvew" name="AddNewEntity" label="AddNewEntity" displayLabel="Add New">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_My3a8FozEeCk-p98EtLvew" line="20" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_3jonoFozEeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;String entity=field_newEntityName;//WT* is an entity? Just a String O_o?&#xA;&#xA;AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,null,null, Arrays.asList(entity));}"/>
+            </widgets>
+            <widgets xmi:type="form:SubmitFormButton" xmi:id="_NEdhQFozEeCk-p98EtLvew" name="RemoveSelectedEntity" label="RemoveSelectedEntity" displayLabel="Remove Selected">
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_NEnSQVozEeCk-p98EtLvew" line="21" column="1"/>
+              <scripts xmi:type="form:GroovyScript" xmi:id="_VVaOUFo0EeCk-p98EtLvew" exprScript="${import java.util.Arrays;&#xA;&#xA;import org.ow2.bonita.facade.identity.User;&#xA;import org.ow2.bonita.facade.privilege.Rule;&#xA;import org.ow2.bonita.facade.privilege.Rule.RuleType;&#xA;import org.ow2.bonita.util.AccessorUtil;&#xA;&#xA;&#xA;Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);&#xA;AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,null,null, Arrays.asList(field_Entities_List));}"/>
+            </widgets>
+            <widgets xmi:type="form:TextFormField" xmi:id="_NjEv4FozEeCk-p98EtLvew" name="newEntityName" label="newEntityName" displayLabel="newEntityName" showDisplayLabel="false">
+              <script xmi:type="form:GroovyScript" xmi:id="_W0SckFozEeCk-p98EtLvew"/>
+              <widgetLayoutInfo xmi:type="form:WidgetLayoutInfo" xmi:id="_NjPH8VozEeCk-p98EtLvew" line="20" column="2"/>
+            </widgets>
+          </form>
+        </elements>
+      </elements>
+      <resourceFolders xmi:type="process:ResourceFolder" xmi:id="_HQkd4FY_EeC5z_TevNZODg" path="User/_HLGIAFY_EeC5z_TevNZODg/application/application"/>
+      <processTemplate xmi:type="process:AssociatedFile" xmi:id="_HQkd4VY_EeC5z_TevNZODg" path="User/_HLGIAFY_EeC5z_TevNZODg/html/process.html"/>
+      <pageTemplate xmi:type="process:AssociatedFile" xmi:id="_HQlE8FY_EeC5z_TevNZODg" path="User/_HLGIAFY_EeC5z_TevNZODg/html/page.html"/>
+      <consultationTemplate xmi:type="process:AssociatedFile" xmi:id="_HQkd4lY_EeC5z_TevNZODg" path="User/_HLGIAFY_EeC5z_TevNZODg/html/consultation.html"/>
+      <data xmi:type="process:Data" xmi:id="_QMR_IFl1EeCKdYca1oZmlg" documentation="Used to transfes infor betwen tasks" name="selectedRule" label="SelectedRule" dataType="_HG3vUlY_EeC5z_TevNZODg" defaultValue=""/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_HQ4m8FY_EeC5z_TevNZODg" source="_HO8tQFY_EeC5z_TevNZODg" target="_HOgoYFY_EeC5z_TevNZODg"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_YUX9IFY_EeC5z_TevNZODg" source="_HOgoYFY_EeC5z_TevNZODg" target="_UY2iwFY_EeC5z_TevNZODg" isDefault="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_4BRacFZEEeCgoPpETj3jqA" source="_HOgoYFY_EeC5z_TevNZODg" target="_BJe_UFZJEeCgoPpETj3jqA" condition="menu_Options==&quot;Edit_Base&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_9cGrcFZEEeCgoPpETj3jqA" source="_BJe_UFZJEeCgoPpETj3jqA" target="_HOgoYFY_EeC5z_TevNZODg" condition="action==&quot;back&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_VWqbkFZPEeC6o80fdJb_6A" source="_BJe_UFZJEeCgoPpETj3jqA" target="_BJe_UFZJEeCgoPpETj3jqA" isDefault="true" condition=""/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_vE3-0FZSEeC6o80fdJb_6A" source="_HOgoYFY_EeC5z_TevNZODg" target="_85scwFZWEeC6o80fdJb_6A" condition="menu_Options==&quot;Edit_Rules&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="__spCUFZSEeC6o80fdJb_6A" source="_85scwFZWEeC6o80fdJb_6A" target="_HOgoYFY_EeC5z_TevNZODg" isDefault="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_kFl_EFZYEeC6o80fdJb_6A" source="_HOgoYFY_EeC5z_TevNZODg" target="_XNvwoFZdEeC6o80fdJb_6A" condition="menu_Options==&quot;Add_Rule&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_9qc5UVccEeCxt7Rp_zrNlA" source="_85scwFZWEeC6o80fdJb_6A" target="_85scwFZWEeC6o80fdJb_6A" condition="action==&quot;remove&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_5UMOQVcdEeCKUIPuZP_Kbg" source="_85scwFZWEeC6o80fdJb_6A" target="_1OthgFZrEeC6o80fdJb_6A" condition="action==&quot;edit&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="__-b4sFcdEeCKUIPuZP_Kbg" source="_XNvwoFZdEeC6o80fdJb_6A" target="_1OthgFZrEeC6o80fdJb_6A" isDefault="true"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_9cyl4FceEeCKUIPuZP_Kbg" source="_1OthgFZrEeC6o80fdJb_6A" target="_HOgoYFY_EeC5z_TevNZODg" condition="action==&quot;back&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_O6i5YFcjEeCKUIPuZP_Kbg" source="_XNvwoFZdEeC6o80fdJb_6A" target="_HOgoYFY_EeC5z_TevNZODg" condition="action==&quot;back&quot;"/>
+      <connections xmi:type="process:SequenceFlow" xmi:id="_Pr-xoFl5EeCKdYca1oZmlg" source="_1OthgFZrEeC6o80fdJb_6A" target="_1OthgFZrEeC6o80fdJb_6A" isDefault="true"/>
+    </elements>
+    <groups xmi:type="process:Group" xmi:id="_HPanUFY_EeC5z_TevNZODg" documentation="Person who takes the first action to start the process" name="Initiator" label="Initiator" connectorId="ProcessInitiatior"/>
+    <datatypes xmi:type="process:BooleanType" xmi:id="_HG3IQlY_EeC5z_TevNZODg" name="Boolean" label="Boolean"/>
+    <datatypes xmi:type="process:DateType" xmi:id="_HG3IQ1Y_EeC5z_TevNZODg" name="Date" label="Date"/>
+    <datatypes xmi:type="process:IntegerType" xmi:id="_HG3vUFY_EeC5z_TevNZODg" name="Integer" label="Integer"/>
+    <datatypes xmi:type="process:FloatType" xmi:id="_HG3vUVY_EeC5z_TevNZODg" name="Decimal" label="Decimal"/>
+    <datatypes xmi:type="process:StringType" xmi:id="_HG3vUlY_EeC5z_TevNZODg" name="Text" label="Text"/>
+    <datatypes xmi:type="process:AttachmentType" xmi:id="_HG3vU1Y_EeC5z_TevNZODg" name="Attachment" label="Attachment"/>
+    <datatypes xmi:type="process:JavaType" xmi:id="_HG3vVFY_EeC5z_TevNZODg" name="Java_object" label="Java object"/>
+    <datatypes xmi:type="process:XMLType" xmi:id="_HG3vVVY_EeC5z_TevNZODg" name="XML" label="XML"/>
+    <datatypes xmi:type="process:EnumType" xmi:id="_fZTtkFZBEeC5z_TevNZODg" name="Rule_list" label="rule list">
+      <literals>Allow</literals>
+      <literals>Deny</literals>
+    </datatypes>
+    <datatypes xmi:type="process:EnumType" xmi:id="_6VxwgFZAEeC5z_TevNZODg" documentation="Menu Options" name="Menu_Options" label="Menu Options">
+      <literals>Edit_Base</literals>
+      <literals>Edit_Rules</literals>
+      <literals>Add_Rule</literals>
+      <literals>Exit</literals>
+    </datatypes>
+    <includedEntries>bonita/bonita-5.4.jar</includedEntries>
+  </process:MainProcess>
+  <notation:Diagram xmi:id="_HH5DAFY_EeC5z_TevNZODg" type="Process" element="_HG3IQVY_EeC5z_TevNZODg" name="Rules_Management_Process_1.0.proc" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_HNmCYFY_EeC5z_TevNZODg" type="2007" element="_HLGIAFY_EeC5z_TevNZODg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HNnQgFY_EeC5z_TevNZODg" type="5008"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_HNnQgVY_EeC5z_TevNZODg" type="7001">
+        <children xmi:type="notation:Node" xmi:id="_icNBYFZCEeCgoPpETj3jqA" type="3007" element="_ibsrEFZCEeCgoPpETj3jqA">
+          <children xmi:type="notation:DecorationNode" xmi:id="_icO2kFZCEeCgoPpETj3jqA" type="5007"/>
+          <children xmi:type="notation:DecorationNode" xmi:id="_icO2kVZCEeCgoPpETj3jqA" type="7002">
+            <children xmi:type="notation:Shape" xmi:id="_HOuq0FY_EeC5z_TevNZODg" type="3005" element="_HOgoYFY_EeC5z_TevNZODg" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_HOvR4FY_EeC5z_TevNZODg" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HOuq0VY_EeC5z_TevNZODg" x="379" y="269"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_HPLWwFY_EeC5z_TevNZODg" type="3002" element="_HO8tQFY_EeC5z_TevNZODg" fontName="Ubuntu">
+              <children xmi:type="notation:DecorationNode" xmi:id="_HPL90FY_EeC5z_TevNZODg" type="5024">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_HPL90VY_EeC5z_TevNZODg" x="3" y="7"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HPLWwVY_EeC5z_TevNZODg" x="210" y="255"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_UY60MFY_EeC5z_TevNZODg" type="3062" element="_UY2iwFY_EeC5z_TevNZODg" fontName="Ubuntu">
+              <children xmi:type="notation:DecorationNode" xmi:id="_UY60MlY_EeC5z_TevNZODg" type="5090">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_UY60M1Y_EeC5z_TevNZODg" y="5"/>
+              </children>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UY60MVY_EeC5z_TevNZODg" x="210" y="312"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_BJm7IFZJEeCgoPpETj3jqA" type="3005" element="_BJe_UFZJEeCgoPpETj3jqA" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_BJm7IlZJEeCgoPpETj3jqA" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BJm7IVZJEeCgoPpETj3jqA" x="379" y="407" width="100" height="50"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_MHGfQFZQEeC6o80fdJb_6A" type="3015" element="_MGuEwFZQEeC6o80fdJb_6A">
+              <children xmi:type="notation:DecorationNode" xmi:id="_MHHtYFZQEeC6o80fdJb_6A" type="5010"/>
+              <styles xmi:type="notation:DescriptionStyle" xmi:id="_MHGfQVZQEeC6o80fdJb_6A"/>
+              <styles xmi:type="notation:FontStyle" xmi:id="_MHGfQlZQEeC6o80fdJb_6A" fontName="Ubuntu"/>
+              <styles xmi:type="notation:LineStyle" xmi:id="_MHGfQ1ZQEeC6o80fdJb_6A"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MHGfRFZQEeC6o80fdJb_6A" x="670" y="341" width="343" height="181"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_85zxgFZWEeC6o80fdJb_6A" type="3005" element="_85scwFZWEeC6o80fdJb_6A" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_850YkFZWEeC6o80fdJb_6A" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_85zxgVZWEeC6o80fdJb_6A" x="372" y="88" width="100" height="50"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_XN6vwFZdEeC6o80fdJb_6A" type="3005" element="_XNvwoFZdEeC6o80fdJb_6A" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_XN7W0FZdEeC6o80fdJb_6A" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XN6vwVZdEeC6o80fdJb_6A" x="556" y="206" width="100" height="50"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_1O35kFZrEeC6o80fdJb_6A" type="3005" element="_1OthgFZrEeC6o80fdJb_6A" fontName="Ubuntu" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_1O4goFZrEeC6o80fdJb_6A" type="5005"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1O35kVZrEeC6o80fdJb_6A" x="556" y="92" width="100" height="50"/>
+            </children>
+          </children>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_icNocFZCEeCgoPpETj3jqA"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_icNocVZCEeCgoPpETj3jqA" fontName="Ubuntu"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_icNoclZCEeCgoPpETj3jqA"/>
+          <styles xmi:type="notation:FillStyle" xmi:id="_icO2klZCEeCgoPpETj3jqA"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_icNoc1ZCEeCgoPpETj3jqA" x="94" y="386"/>
+        </children>
+      </children>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_HNmCYVY_EeC5z_TevNZODg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_HNmCYlY_EeC5z_TevNZODg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_HNmCY1Y_EeC5z_TevNZODg"/>
+      <styles xmi:type="notation:FillStyle" xmi:id="_HNnQglY_EeC5z_TevNZODg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HNmCZFY_EeC5z_TevNZODg" width="1040" height="550"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_HH5DAVY_EeC5z_TevNZODg"/>
+    <edges xmi:type="notation:Connector" xmi:id="_HQ_UoFY_EeC5z_TevNZODg" type="4001" element="_HQ4m8FY_EeC5z_TevNZODg" source="_HPLWwFY_EeC5z_TevNZODg" target="_HOuq0FY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HRBJ0FY_EeC5z_TevNZODg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HRBJ0VY_EeC5z_TevNZODg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_HRBw4FY_EeC5z_TevNZODg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_HRBw4VY_EeC5z_TevNZODg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_HQ_UoVY_EeC5z_TevNZODg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_HQ_UolY_EeC5z_TevNZODg" points="[15, -1, -189, -25]$[99, -1, -105, -25]$[99, 17, -105, -7]$[154, 17, -50, -7]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_YUbngFY_EeC5z_TevNZODg" type="4001" element="_YUX9IFY_EeC5z_TevNZODg" source="_HOuq0FY_EeC5z_TevNZODg" target="_UY60MFY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_YUcOkFY_EeC5z_TevNZODg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_YUcOkVY_EeC5z_TevNZODg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_YUcOklY_EeC5z_TevNZODg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_YUc1oFY_EeC5z_TevNZODg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_YUbngVY_EeC5z_TevNZODg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_YUbnglY_EeC5z_TevNZODg" points="[-100, 5, 154, -23]$[-159, 5, 95, -23]$[-159, 27, 95, -1]$[-239, 27, 15, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_YUggAFY_EeC5z_TevNZODg" id="(1.0,0.6)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_4BWS8FZEEeCgoPpETj3jqA" type="4001" element="_4BRacFZEEeCgoPpETj3jqA" source="_HOuq0FY_EeC5z_TevNZODg" target="_BJm7IFZJEeCgoPpETj3jqA" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_4BXhEFZEEeCgoPpETj3jqA" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4BYIIFZEEeCgoPpETj3jqA" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_4BYIIVZEEeCgoPpETj3jqA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_4BYIIlZEEeCgoPpETj3jqA" x="13" y="52"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_4BW6AFZEEeCgoPpETj3jqA" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_4BW6AVZEEeCgoPpETj3jqA" points="[-25, 25, -25, -113]$[-25, 113, -25, -25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_9cOAMFZEEeCgoPpETj3jqA" type="4001" element="_9cGrcFZEEeCgoPpETj3jqA" source="_BJm7IFZJEeCgoPpETj3jqA" target="_HOuq0FY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9cOnQFZEEeCgoPpETj3jqA" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9cOnQVZEEeCgoPpETj3jqA" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9cOnQlZEEeCgoPpETj3jqA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9cOnQ1ZEEeCgoPpETj3jqA" x="-13" y="43"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9cOAMVZEEeCgoPpETj3jqA" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9cOAMlZEEeCgoPpETj3jqA" points="[-37, -32, 13, 113]$[-37, -120, 13, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9cS4sFZEEeCgoPpETj3jqA" id="(1.0,0.64)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_VW328FZPEeC6o80fdJb_6A" type="4001" element="_VWqbkFZPEeC6o80fdJb_6A" source="_BJm7IFZJEeCgoPpETj3jqA" target="_BJm7IFZJEeCgoPpETj3jqA" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VW_ywFZPEeC6o80fdJb_6A" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VXAZ0FZPEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_VXBA4FZPEeC6o80fdJb_6A" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_VXBA4VZPEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_VW328VZPEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_VW328lZPEeC6o80fdJb_6A" points="[0, 0, 50, 3]$[14, 0, 64, 3]$[14, 37, 64, 40]$[-24, 37, 26, 40]$[-24, 22, 26, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_VXHukFZPEeC6o80fdJb_6A" id="(1.0,0.56)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_MHVv0FZQEeC6o80fdJb_6A" type="4003" element="_MHPpMFZQEeC6o80fdJb_6A" source="_MHGfQFZQEeC6o80fdJb_6A" target="_BJm7IFZJEeCgoPpETj3jqA" routing="Rectilinear">
+      <styles xmi:type="notation:FontStyle" xmi:id="_MHVv0VZQEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_MHVv0lZQEeC6o80fdJb_6A" points="[-171, -24, 102, -17]$[-223, -24, 50, -17]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_vE8QQFZSEeC6o80fdJb_6A" type="4001" element="_vE3-0FZSEeC6o80fdJb_6A" source="_HOuq0FY_EeC5z_TevNZODg" target="_85zxgFZWEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_vE83UFZSEeC6o80fdJb_6A" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vE83UVZSEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_vE83UlZSEeC6o80fdJb_6A" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_vE83U1ZSEeC6o80fdJb_6A" x="17" y="-72"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_vE8QQVZSEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_vE8QQlZSEeC6o80fdJb_6A" points="[-25, -25, -12, 103]$[-25, -103, -12, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="__suh4FZSEeC6o80fdJb_6A" type="4001" element="__spCUFZSEeC6o80fdJb_6A" source="_85zxgFZWEeC6o80fdJb_6A" target="_HOuq0FY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="__suh41ZSEeC6o80fdJb_6A" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__suh5FZSEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="__svI8FZSEeC6o80fdJb_6A" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__svI8VZSEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="__suh4VZSEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__suh4lZSEeC6o80fdJb_6A" points="[-44, 19, -1, -156]$[-44, 150, -1, -25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__syMQFZSEeC6o80fdJb_6A" id="(1.0,0.62)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_kFq3kFZYEeC6o80fdJb_6A" type="4001" element="_kFl_EFZYEeC6o80fdJb_6A" source="_HOuq0FY_EeC5z_TevNZODg" target="_XN6vwFZdEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kFreoVZYEeC6o80fdJb_6A" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kFreolZYEeC6o80fdJb_6A" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_kFreo1ZYEeC6o80fdJb_6A" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_kFrepFZYEeC6o80fdJb_6A" x="9" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_kFq3kVZYEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_kFreoFZYEeC6o80fdJb_6A" points="[50, -10, -127, 53]$[165, -10, -12, 53]$[165, -38, -12, 25]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_95sPMFccEeCxt7Rp_zrNlA" type="4001" element="_9qc5UVccEeCxt7Rp_zrNlA" source="_85zxgFZWEeC6o80fdJb_6A" target="_85zxgFZWEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_95zj8FccEeCxt7Rp_zrNlA" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_950LAFccEeCxt7Rp_zrNlA" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_950LAVccEeCxt7Rp_zrNlA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_950LAlccEeCxt7Rp_zrNlA" x="-5" y="12"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_95wgoFccEeCxt7Rp_zrNlA" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_95wgoVccEeCxt7Rp_zrNlA" points="[0, -15, 33, 8]$[27, -15, 60, 8]$[27, -53, 60, -30]$[-44, -53, -11, -30]$[-44, -30, -11, -7]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_96Ge4FccEeCxt7Rp_zrNlA" id="(1.0,0.6)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_96HF8FccEeCxt7Rp_zrNlA" id="(0.67,0.14)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_5VIpcFcdEeCKUIPuZP_Kbg" type="4001" element="_5UMOQVcdEeCKUIPuZP_Kbg" source="_85zxgFZWEeC6o80fdJb_6A" target="_1O35kFZrEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_5VQlQFcdEeCKUIPuZP_Kbg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_5VRMUFcdEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_5VRMUVcdEeCKUIPuZP_Kbg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_5VRzYFcdEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_5VJ3kFcdEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5VJ3kVcdEeCKUIPuZP_Kbg" points="[0, -3, -134, -1]$[84, -3, -50, -1]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5VdZkFcdEeCKUIPuZP_Kbg" id="(1.0,0.62)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="__-p7IFcdEeCKUIPuZP_Kbg" type="4001" element="__-b4sFcdEeCKUIPuZP_Kbg" source="_XN6vwFZdEeC6o80fdJb_6A" target="_1O35kFZrEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="__-qiMFcdEeCKUIPuZP_Kbg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__-qiMVcdEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="__-qiMlcdEeCKUIPuZP_Kbg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="__-rJQFcdEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="__-p7IVcdEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="__-p7IlcdEeCKUIPuZP_Kbg" points="[-51, -31, -1, 89]$[-51, -95, -1, 25]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="__-uzoFcdEeCKUIPuZP_Kbg" id="(1.0,0.62)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_9dB2cFceEeCKUIPuZP_Kbg" type="4001" element="_9cyl4FceEeCKUIPuZP_Kbg" source="_1O35kFZrEeC6o80fdJb_6A" target="_HOuq0FY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_9dB2c1ceEeCKUIPuZP_Kbg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9dB2dFceEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_9dCdgFceEeCKUIPuZP_Kbg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_9dCdgVceEeCKUIPuZP_Kbg" x="-8" y="12"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_9dB2cVceEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_9dB2clceEeCKUIPuZP_Kbg" points="[-62, 20, 138, -136]$[-62, 57, 138, -99]$[-157, 57, 43, -99]$[-157, 133, 43, -23]$[-195, 133, 5, -23]$[-195, 147, 5, -9]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9dGH4FceEeCKUIPuZP_Kbg" id="(1.0,0.6)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_9dGH4VceEeCKUIPuZP_Kbg" id="(0.77,0.18)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_O6w70FcjEeCKUIPuZP_Kbg" type="4001" element="_O6i5YFcjEeCKUIPuZP_Kbg" source="_XN6vwFZdEeC6o80fdJb_6A" target="_HOuq0FY_EeC5z_TevNZODg" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_O6xi4FcjEeCKUIPuZP_Kbg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_O6xi4VcjEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_O6xi4lcjEeCKUIPuZP_Kbg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_O6xi41cjEeCKUIPuZP_Kbg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_O6w70VcjEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_O6w70lcjEeCKUIPuZP_Kbg" points="[-54, 18, 138, -46]$[-177, 67, 15, 3]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O61NQFcjEeCKUIPuZP_Kbg" id="(1.0,0.64)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_O61NQVcjEeCKUIPuZP_Kbg" id="(0.85,0.66)"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_PsNbIFl5EeCKdYca1oZmlg" type="4001" element="_Pr-xoFl5EeCKdYca1oZmlg" source="_1O35kFZrEeC6o80fdJb_6A" target="_1O35kFZrEeC6o80fdJb_6A" roundedBendpointsRadius="10" routing="Rectilinear">
+      <children xmi:type="notation:DecorationNode" xmi:id="_PsOCMFl5EeCKdYca1oZmlg" visible="false" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PsOCMVl5EeCKdYca1oZmlg" y="-10"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_PsOCMll5EeCKdYca1oZmlg" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_PsOCM1l5EeCKdYca1oZmlg" y="-10"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_PsNbIVl5EeCKdYca1oZmlg" fontName="Ubuntu"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PsNbIll5EeCKdYca1oZmlg" points="[0, 0, 24, 19]$[33, 0, 57, 19]$[33, -57, 57, -38]$[-24, -57, 0, -38]$[-24, -30, 0, -11]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PsRskFl5EeCKdYca1oZmlg" id="(1.0,0.6)"/>
+      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PsRskVl5EeCKdYca1oZmlg" id="(0.76,0.22)"/>
+    </edges>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_fbamYFZBEeC5z_TevNZODg" type="Form" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_fbamYVZBEeC5z_TevNZODg"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_DzdSQFZJEeCgoPpETj3jqA" type="Form" element="_DzZA0FZJEeCgoPpETj3jqA" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_D0GygFZJEeCgoPpETj3jqA" type="2126" element="_DzZA0VZJEeCgoPpETj3jqA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_D0GyhVZJEeCgoPpETj3jqA" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_D0GygVZJEeCgoPpETj3jqA"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_D0GyglZJEeCgoPpETj3jqA" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_D0Gyg1ZJEeCgoPpETj3jqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_D0GyhFZJEeCgoPpETj3jqA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_HXjEEFZJEeCgoPpETj3jqA" type="2119" element="_HXYsAFZJEeCgoPpETj3jqA" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HXjEElZJEeCgoPpETj3jqA" type="5107"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HXjEEVZJEeCgoPpETj3jqA"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_TZWpEFZJEeCgoPpETj3jqA" type="2118" element="_TZRJgFZJEeCgoPpETj3jqA" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_TZWpElZJEeCgoPpETj3jqA" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TZWpEVZJEeCgoPpETj3jqA"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_uixGYFZJEeCgoPpETj3jqA" type="2126" element="_uitcAFZJEeCgoPpETj3jqA">
+      <children xmi:type="notation:DecorationNode" xmi:id="_uixGZVZJEeCgoPpETj3jqA" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_uixGYVZJEeCgoPpETj3jqA"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_uixGYlZJEeCgoPpETj3jqA" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_uixGY1ZJEeCgoPpETj3jqA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uixGZFZJEeCgoPpETj3jqA"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_DzdSQVZJEeCgoPpETj3jqA"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_MMHd8FZXEeC6o80fdJb_6A" type="Form" element="_MMDzkFZXEeC6o80fdJb_6A" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_MMq3kFZXEeC6o80fdJb_6A" type="2126" element="_MMDzkVZXEeC6o80fdJb_6A">
+      <children xmi:type="notation:DecorationNode" xmi:id="_MMreoFZXEeC6o80fdJb_6A" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_MMq3kVZXEeC6o80fdJb_6A"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_MMq3klZXEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_MMq3k1ZXEeC6o80fdJb_6A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MMq3lFZXEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Pis_QFZXEeC6o80fdJb_6A" type="2139" element="_PiqjAFZXEeC6o80fdJb_6A" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_PitmUFZXEeC6o80fdJb_6A" type="5151"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Pis_QVZXEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_EBa38FZYEeC6o80fdJb_6A" type="2119" element="_EBUxUFZYEeC6o80fdJb_6A" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_EBbfAFZYEeC6o80fdJb_6A" type="5107"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EBa38VZYEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_O-lwIFZYEeC6o80fdJb_6A" type="2126" element="_O-b_IFZYEeC6o80fdJb_6A">
+      <children xmi:type="notation:DecorationNode" xmi:id="_O-lwJVZYEeC6o80fdJb_6A" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_O-lwIVZYEeC6o80fdJb_6A"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_O-lwIlZYEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_O-lwI1ZYEeC6o80fdJb_6A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_O-lwJFZYEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_TAOuoFceEeCKUIPuZP_Kbg" type="2126" element="_S_9B0FceEeCKUIPuZP_Kbg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_TAP8wFceEeCKUIPuZP_Kbg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_TAPVsFceEeCKUIPuZP_Kbg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_TAPVsVceEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_TAPVslceEeCKUIPuZP_Kbg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TAPVs1ceEeCKUIPuZP_Kbg"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_MMHd8VZXEeC6o80fdJb_6A"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_iR6BoFZdEeC6o80fdJb_6A" type="Form" element="_iR4zgFZdEeC6o80fdJb_6A" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_iShss1ZdEeC6o80fdJb_6A" type="2120" element="_iR4zhFZdEeC6o80fdJb_6A" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_iShstVZdEeC6o80fdJb_6A" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iShstFZdEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_iSiTwFZdEeC6o80fdJb_6A" type="2120" element="_iR4zh1ZdEeC6o80fdJb_6A" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_iSiTwlZdEeC6o80fdJb_6A" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iSiTwVZdEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_iSiTw1ZdEeC6o80fdJb_6A" type="2126" element="_iR4zilZdEeC6o80fdJb_6A">
+      <children xmi:type="notation:DecorationNode" xmi:id="_iSiTyFZdEeC6o80fdJb_6A" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_iSiTxFZdEeC6o80fdJb_6A"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_iSiTxVZdEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_iSiTxlZdEeC6o80fdJb_6A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_iSiTx1ZdEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_oqD2gFZdEeC6o80fdJb_6A" type="2119" element="_op--AFZdEeC6o80fdJb_6A" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_oqEdkFZdEeC6o80fdJb_6A" type="5107"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_oqD2gVZdEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qpxPAFZeEeC6o80fdJb_6A" type="2126" element="_qpoFEFZeEeC6o80fdJb_6A">
+      <children xmi:type="notation:DecorationNode" xmi:id="_qp0SUFZeEeC6o80fdJb_6A" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_qpxPAVZeEeC6o80fdJb_6A"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_qpxPAlZeEeC6o80fdJb_6A" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_qpxPA1ZeEeC6o80fdJb_6A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qpxPBFZeEeC6o80fdJb_6A"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_t1UuQFo-EeCk-p98EtLvew" type="2121" element="_t1POsFo-EeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_t1VVUFo-EeCk-p98EtLvew" type="5109"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t1UuQVo-EeCk-p98EtLvew"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_iR6osFZdEeC6o80fdJb_6A"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_YGirsFcfEeCKUIPuZP_Kbg" type="Form" element="_YGfBUFcfEeCKUIPuZP_Kbg" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_YHV88FcfEeCKUIPuZP_Kbg" type="2126" element="_YGfBUVcfEeCKUIPuZP_Kbg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_YHWkAFcfEeCKUIPuZP_Kbg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_YHV88VcfEeCKUIPuZP_Kbg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_YHV88lcfEeCKUIPuZP_Kbg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_YHV881cfEeCKUIPuZP_Kbg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YHV89FcfEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_kqO48FcjEeCKUIPuZP_Kbg" type="2132" element="_kqFH8FcjEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_kqO48lcjEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kqO48VcjEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_yzQXMFclEeCKUIPuZP_Kbg" type="2132" element="_yzIbYFclEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yzQ-QFclEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yzQXMVclEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_PIKXQFcmEeCKUIPuZP_Kbg" type="2132" element="_PIH7AFcmEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_PIK-UFcmEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PIKXQVcmEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_XORiwFcmEeCKUIPuZP_Kbg" type="2132" element="_XOOfcFcmEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_XORiwlcmEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XORiwVcmEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_yP25wFcmEeCKUIPuZP_Kbg" type="2132" element="_yPyBQFcmEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yP3g0VcmEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yP3g0FcmEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_8--H0FcmEeCKUIPuZP_Kbg" type="2132" element="_8-7EgFcmEeCKUIPuZP_Kbg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8--u4FcmEeCKUIPuZP_Kbg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8--H0VcmEeCKUIPuZP_Kbg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_sao40FlVEeCKdYca1oZmlg" type="2132" element="_saJJkFlVEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_saqG8FlVEeCKdYca1oZmlg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_sao40VlVEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Py1VcFlWEeCKdYca1oZmlg" type="2131" element="_PyqWUFlWEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_Py18gFlWEeCKdYca1oZmlg" type="5135"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Py1VcVlWEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="__LSCcFlXEeCKdYca1oZmlg" type="2132" element="__LKtsFlXEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="__LSpgFlXEeCKdYca1oZmlg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__LSCcVlXEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="__mibEFlXEeCKdYca1oZmlg" type="2132" element="__mZ4MFlXEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="__mjCIFlXEeCKdYca1oZmlg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="__mibEVlXEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_veHCIFlbEeCKdYca1oZmlg" type="2118" element="_vd_GUFlbEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_veHpMVlbEeCKdYca1oZmlg" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_veHpMFlbEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_xVEjwFlbEeCKdYca1oZmlg" type="2118" element="_xVASUFlbEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_xVEjwllbEeCKdYca1oZmlg" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xVEjwVlbEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_jhwIYFlcEeCKdYca1oZmlg" type="2118" element="_jhr28FlcEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jhwvcFlcEeCKdYca1oZmlg" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jhwIYVlcEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_HW-fQFldEeCKdYca1oZmlg" type="2132" element="_HWVmEFldEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HW_GUFldEeCKdYca1oZmlg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HW-fQVldEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ZL7HkFldEeCKdYca1oZmlg" type="2126" element="_ZLwIcFldEeCKdYca1oZmlg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZL7uoFldEeCKdYca1oZmlg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_ZL7HkVldEeCKdYca1oZmlg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ZL7HklldEeCKdYca1oZmlg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_ZL7Hk1ldEeCKdYca1oZmlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZL7HlFldEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ZwDIUFldEeCKdYca1oZmlg" type="2126" element="_Zv8aoFldEeCKdYca1oZmlg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ZwDvYFldEeCKdYca1oZmlg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_ZwDIUVldEeCKdYca1oZmlg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_ZwDIUlldEeCKdYca1oZmlg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_ZwDIU1ldEeCKdYca1oZmlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ZwDIVFldEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_xktH8FlrEeCKdYca1oZmlg" type="2120" element="_xkoPcFlrEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_xktvAFlrEeCKdYca1oZmlg" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_xktH8VlrEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_1fAAAFl7EeCKdYca1oZmlg" type="2132" element="_1e4rQFl7EeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1fAnEFl7EeCKdYca1oZmlg" type="5136"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1fAAAVl7EeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_7OM-gFl7EeCKdYca1oZmlg" type="2118" element="_7OCmcFl7EeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_7ONlkFl7EeCKdYca1oZmlg" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_7OM-gVl7EeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Eqpq0Fl8EeCKdYca1oZmlg" type="2126" element="_Eqc2gFl8EeCKdYca1oZmlg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_EqqR4Fl8EeCKdYca1oZmlg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_Eqpq0Vl8EeCKdYca1oZmlg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_Eqpq0ll8EeCKdYca1oZmlg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_Eqpq01l8EeCKdYca1oZmlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Eqpq1Fl8EeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_E7-rYFl8EeCKdYca1oZmlg" type="2126" element="_E74kwFl8EeCKdYca1oZmlg">
+      <children xmi:type="notation:DecorationNode" xmi:id="_E7-rZVl8EeCKdYca1oZmlg" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_E7-rYVl8EeCKdYca1oZmlg"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_E7-rYll8EeCKdYca1oZmlg" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_E7-rY1l8EeCKdYca1oZmlg"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_E7-rZFl8EeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_m5lqQFmFEeCKdYca1oZmlg" type="2119" element="_m5cgUFmFEeCKdYca1oZmlg" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_m5mRUFmFEeCKdYca1oZmlg" type="5107"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_m5lqQVmFEeCKdYca1oZmlg"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_12I9IFoJEeCk-p98EtLvew" type="2126" element="_11nYsFoJEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_12I9JVoJEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_12I9IVoJEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_12I9IloJEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_12I9I1oJEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_12I9JFoJEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_2Nlz0FoJEeCk-p98EtLvew" type="2126" element="_2Na0sFoJEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_2Nma4FoJEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_2Nlz0VoJEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_2Nlz0loJEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_2Nlz01oJEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_2Nlz1FoJEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_Qvg2gFoOEeCk-p98EtLvew" type="2120" element="_QvXFgFoOEeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_QvhdkFoOEeCk-p98EtLvew" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Qvg2gVoOEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_jLxPEFoREeCk-p98EtLvew" type="2126" element="_jLhXcFoREeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jLx2IFoREeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_jLxPEVoREeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_jLxPEloREeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_jLxPE1oREeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jLxPFFoREeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_jbMyMFoREeCk-p98EtLvew" type="2126" element="_jbDBMFoREeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jbNZRFoREeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_jbNZQFoREeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_jbNZQVoREeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_jbNZQloREeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jbNZQ1oREeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_rWvFYFoREeCk-p98EtLvew" type="2120" element="_rWiREFoREeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_rWvscFoREeCk-p98EtLvew" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rWvFYVoREeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_QHr4IFonEeCk-p98EtLvew" type="2118" element="_QHg5AFonEeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_QHr4IlonEeCk-p98EtLvew" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_QHr4IVonEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_rZzwEFooEeCk-p98EtLvew" type="2126" element="_rZmUsFooEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_rZ0XIFooEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_rZzwEVooEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_rZzwElooEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_rZzwE1ooEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_rZzwFFooEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_r-iNwFooEeCk-p98EtLvew" type="2126" element="_r-ZD0FooEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_r-i01FooEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_r-i00FooEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_r-i00VooEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_r-i00looEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_r-i001ooEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_1twFEFooEeCk-p98EtLvew" type="2120" element="_1tlF8FooEeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_1twFElooEeCk-p98EtLvew" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_1twFEVooEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_ITa0IFozEeCk-p98EtLvew" type="2118" element="_ITPN8FozEeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_ITbbMFozEeCk-p98EtLvew" type="5106"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ITa0IVozEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_My2z4FozEeCk-p98EtLvew" type="2126" element="_MyoxcFozEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_My2z5VozEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_My2z4VozEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_My2z4lozEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_My2z41ozEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_My2z5FozEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_NEmrMFozEeCk-p98EtLvew" type="2126" element="_NEdhQFozEeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NEnSQFozEeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_NEmrMVozEeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_NEmrMlozEeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_NEmrM1ozEeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NEmrNFozEeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_NjOg4FozEeCk-p98EtLvew" type="2120" element="_NjEv4FozEeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_NjPH8FozEeCk-p98EtLvew" type="5108"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_NjOg4VozEeCk-p98EtLvew"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_YGirsVcfEeCKUIPuZP_Kbg"/>
+  </notation:Diagram>
+  <notation:Diagram xmi:id="_s8Wc8FcfEeCKUIPuZP_Kbg" type="Form" element="_s8SLgFcfEeCKUIPuZP_Kbg" measurementUnit="Pixel">
+    <children xmi:type="notation:Node" xmi:id="_wYNXMFo9EeCk-p98EtLvew" type="2126" element="_wYGpgFo9EeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wYN-QFo9EeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_wYNXMVo9EeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_wYNXMlo9EeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_wYNXM1o9EeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wYNXNFo9EeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_w3PckFo9EeCk-p98EtLvew" type="2126" element="_w3MZQFo9EeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_w3QDoFo9EeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_w3PckVo9EeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_w3Pcklo9EeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_w3Pck1o9EeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_w3PclFo9EeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_yaPgYFo9EeCk-p98EtLvew" type="2126" element="_yaL2AFo9EeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_yaQHcFo9EeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_yaPgYVo9EeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_yaPgYlo9EeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_yaPgY1o9EeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yaPgZFo9EeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_8-zEQFo9EeCk-p98EtLvew" type="2143" element="_8-sWkFo9EeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_8-zrUFo9EeCk-p98EtLvew" type="5159"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8-zEQVo9EeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_jvPZoFo_EeCk-p98EtLvew" type="2143" element="_jvGPsFo_EeCk-p98EtLvew" fontName="Ubuntu">
+      <children xmi:type="notation:DecorationNode" xmi:id="_jvQAsFo_EeCk-p98EtLvew" type="5159"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_jvPZoVo_EeCk-p98EtLvew"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_mcK58Fo_EeCk-p98EtLvew" type="2126" element="_mcGBcFo_EeCk-p98EtLvew">
+      <children xmi:type="notation:DecorationNode" xmi:id="_mcLhAFo_EeCk-p98EtLvew" type="5125"/>
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_mcK58Vo_EeCk-p98EtLvew"/>
+      <styles xmi:type="notation:FontStyle" xmi:id="_mcK58lo_EeCk-p98EtLvew" fontName="Ubuntu"/>
+      <styles xmi:type="notation:LineStyle" xmi:id="_mcK581o_EeCk-p98EtLvew"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mcK59Fo_EeCk-p98EtLvew"/>
+    </children>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_s8Wc8VcfEeCKUIPuZP_Kbg"/>
+  </notation:Diagram>
+</xmi:XMI>
