@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <forms-definition product-version="5.4">
-  <process name="Rules_Management_Process" version="1.0">
+  <process name="Rules_Management_Process" version="1.2">
     <process-label>Rules Management Process</process-label>
     <process-template>html/Rules_Management_Process_process_template.html</process-template>
     <mandatory-symbol>*</mandatory-symbol>
@@ -624,40 +624,18 @@ return ruleObj.getDescription();}</variable-bound>
                 </widget>
                 <widget id="Exceptions_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
 
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
-import org.ow2.bonita.light.LightProcessDefinition;
-import org.ow2.bonita.util.AccessorUtil;
+Set exceptions = new HashSet&lt;String&gt;();
 
-
-
-Set&lt;ProcessDefinitionUUID&gt; processesUUID = new HashSet&lt;ProcessDefinitionUUID&gt;();
-
-Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
 
 for(String atual: ruleObj.getItems()){
-	String UUID=atual;
-	ProcessDefinitionUUID novo= new ProcessDefinitionUUID(atual);
-	processesUUID.add(novo);
-}
-
-Set&lt;LightProcessDefinition&gt; processosObj=AccessorUtil.getQueryDefinitionAPI().getLightProcesses(processesUUID);
-Map&lt;String,String&gt; processosInfo=new HashMap&lt;String,String&gt;();
-
-for(LightProcessDefinition atual: processosObj){
-	processosInfo.put(atual.getUUID().getValue(), atual.getUUID().getValue());
+	exceptions.add(atual);
 }
 
 
-return processosInfo;}</expression>
+return exceptions;}</expression>
                   </available-values>
                   <allow-html-in-field>false</allow-html-in-field>
                   <mandatory>false</mandatory>
@@ -668,24 +646,109 @@ return processosInfo;}</expression>
                   <label>Add New</label>
                   <allow-html-in-label>false</allow-html-in-label>
                 </widget>
-                <widget id="NewExceptionName" type="LISTBOX_SIMPLE">
+                <widget id="NewExceptionName" type="SUGGESTBOX">
                   <available-values>
-                    <expression>${import java.util.Set;
-import javax.security.auth.login.LoginContext;
-import javax.security.auth.login.LoginException;
-import org.ow2.bonita.facade.*
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
-import org.ow2.bonita.util.AccessorUtil;
-import org.ow2.bonita.util.BonitaConstants;
-import org.ow2.bonita.util.SimpleCallbackHandler;
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+import org.ow2.bonita.light.LightProcessDefinition;
+import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
 
-QueryDefinitionAPI api = AccessorUtil.getQueryDefinitionAPI();
-Set &lt;ProcessDefinition&gt; he = api.getProcesses();
-Set &lt;ProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getProcesses();
-List&lt;String&gt; UUIDs = []
+Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+List&lt;String&gt; UUIDs = [];
 
-processes.each{
-UUIDs.add(it.getUUID())
+/* All Rule Types
+//Processes
+RuleType.PROCESS_ADD_COMMENT
+RuleType.PROCESS_INSTALL
+RuleType.PROCESS_INSTANTIATION_DETAILS_VIEW
+RuleType.PROCESS_MANAGE
+RuleType.PROCESS_READ
+RuleType.PROCESS_START
+
+//Activities
+RuleType.ACTIVITY_DETAILS_READ
+RuleType.ACTIVITY_READ
+
+RuleType.CHANGE_PRIORITY_STEP
+RuleType.ASSIGN_TO_ME_STEP
+RuleType.ASSIGN_TO_STEP
+RuleType.RESUME_STEP
+RuleType.SKIP_STEP
+RuleType.SUSPEND_STEP
+RuleType.UNASSIGN_STEP
+
+//Categories
+RuleType.CATEGORY_READ
+
+//Reports
+RuleType.REPORT_INSTALL
+RuleType.REPORT_MANAGE
+RuleType.REPORT_VIEW
+
+//Other
+RuleType.CUSTOM
+RuleType.DELEGEE_UPDATE
+RuleType.LOGOUT
+RuleType.PASSWORD_UPDATE
+*/
+
+switch(ruleObj.getType()){
+	//Processes
+	case RuleType.PROCESS_ADD_COMMENT:
+	case RuleType.PROCESS_INSTALL:
+	case RuleType.PROCESS_INSTANTIATION_DETAILS_VIEW:
+	case RuleType.PROCESS_MANAGE:
+	case RuleType.PROCESS_READ:
+	case RuleType.PROCESS_START:
+		Set &lt;LightProcessDefinition&gt; processes = apiAccessor.getQueryDefinitionAPI().getLightProcesses();
+		
+		processes.each{
+			UUIDs.add(it.getUUID());
+		}
+		break;
+	
+	//Activities
+	case RuleType.ACTIVITY_DETAILS_READ:
+	case RuleType.ACTIVITY_READ:
+	case RuleType.CHANGE_PRIORITY_STEP:
+	case RuleType.ASSIGN_TO_ME_STEP:
+	case RuleType.ASSIGN_TO_STEP:
+	case RuleType.RESUME_STEP:
+	case RuleType.SKIP_STEP:
+	case RuleType.SUSPEND_STEP:
+	case RuleType.UNASSIGN_STEP:
+		Set &lt;LightProcessDefinition&gt; processes = apiAccessor.getQueryDefinitionAPI().getLightProcesses();
+		
+		processes.each{
+			Set&lt;ActivityDefinitionUUID&gt; activities=apiAccessor.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
+			UUIDs.addAll(activities);
+		}
+		break;
+		
+	//Categories
+	case Rule.RuleType.CATEGORY_READ:
+		Set&lt;Category&gt; categories = apiAccessor.getWebAPI().getAllCategories();
+	
+		categories.each{
+			UUIDs.add(it.getUUID());
+		}
+		break;
+	
+	//Reports
+	case RuleType.REPORT_INSTALL:
+	case RuleType.REPORT_MANAGE:
+	case RuleType.REPORT_VIEW:
+		//TODO: List Reports?
+		break;
+		
+	//Other
+	case RuleType.CUSTOM:
+	case RuleType.DELEGEE_UPDATE:
+	case RuleType.LOGOUT:
+	case RuleType.PASSWORD_UPDATE:
+	default:
+		//Nothing to list
+	break;
 }
 
 return UUIDs}</expression>
@@ -1073,49 +1136,31 @@ AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),Arrays.
                   <submit-button>RemoveSelecteduser</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
-import org.ow2.bonita.util.AccessorUtil;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.uuid.AbstractUUID;
+import org.ow2.bonita.facade.uuid.RuleExceptionUUID;
 
 
-Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
 
-Set&lt;ProcessDefinitionUUID&gt; processes=new HashSet&lt;ProcessDefinitionUUID&gt;();
-processes.add(new ProcessDefinitionUUID(field_NewExceptionName));
+Set exceptions=new HashSet&lt;AbstractUUID&gt;();
 
-AccessorUtil.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), processes);}</expression>
+exceptions.add(new RuleExceptionUUID(field_NewExceptionName));
+
+apiAccessor.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), exceptions);}</expression>
                   <submit-button>AddNewException</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.facade.uuid.RuleExceptionUUID;
+import org.ow2.bonita.facade.uuid.AbstractUUID;
 
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
-import org.ow2.bonita.util.AccessorUtil;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
-
-
-//Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
-
-Set&lt;ProcessDefinitionUUID&gt; processes=new HashSet&lt;ProcessDefinitionUUID&gt;();
-processes.add(new ProcessDefinitionUUID(field_Exceptions_List));
-
-AccessorUtil.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,processes);}</expression>
+Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+	
+Set exceptions=new HashSet&lt;AbstractUUID&gt;();
+exceptions.add(new RuleExceptionUUID(field_Exceptions_List));
+	
+apiAccessor.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,exceptions);}</expression>
                   <submit-button>RemoveSelectedException</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
