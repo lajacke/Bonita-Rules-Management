@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<forms-definition product-version="5.4">
+<forms-definition product-version="5.5">
   <process name="Rules_Management_Process" version="1.2">
     <process-label>Rules Management Process</process-label>
     <process-template>html/Rules_Management_Process_process_template.html</process-template>
@@ -93,25 +93,21 @@
                 <widget id="Lista" type="TABLE">
                   <select-mode>NONE</select-mode>
                   <available-values>
-                    <expression>${import org.ow2.bonita.facade.privilege.PrivilegePolicy;
-	import org.ow2.bonita.facade.*;
-	import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
-	import org.ow2.bonita.util.AccessorUtil;
-	import org.ow2.bonita.facade.privilege.Rule;
-	import org.ow2.bonita.facade.privilege.Rule.RuleType;
-	
-	
-	List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
-			
-	List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
-	
-	for(RuleType atual: all){
-		valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
+                    <expression>${import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+
+
+List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
 		
-		retorno.add([atual.toString(),valorStr]);
-	}
+List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
+
+for(RuleType atual: all){
+	valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
 	
-	return retorno;}</expression>
+	retorno.add([atual.toString(),valorStr]);
+}
+
+return retorno;}</expression>
                   </available-values>
                   <mandatory>false</mandatory>
                   <readonly>false</readonly>
@@ -128,25 +124,21 @@
                   <table-style>table_Step1_Edit_Lista</table-style>
                   <label-style>label_Step1_Edit_Lista</label-style>
                   <style>input_Step1_Edit_Lista</style>
-                  <variable-bound>${import org.ow2.bonita.facade.privilege.PrivilegePolicy;
-	import org.ow2.bonita.facade.*;
-	import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
-	import org.ow2.bonita.util.AccessorUtil;
-	import org.ow2.bonita.facade.privilege.Rule;
-	import org.ow2.bonita.facade.privilege.Rule.RuleType;
-	
-	
-	List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
-			
-	List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
-	
-	for(RuleType atual: all){
-		valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
+                  <variable-bound>${import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.privilege.Rule.RuleType;
+
+
+List&lt;List&lt;String&gt;&gt; retorno=new ArrayList&lt;List&lt;String&gt;&gt;();
 		
-		retorno.add([atual.toString(),valorStr]);
-	}
+List&lt;RuleType&gt; all= Arrays.asList(RuleType.values());
+
+for(RuleType atual: all){
+	valorStr=(AccessorUtil.getManagementAPI().getRuleTypePolicy(atual)).toString();
 	
-	return retorno;}</variable-bound>
+	retorno.add([atual.toString(),valorStr]);
+}
+
+return retorno;}</variable-bound>
                 </widget>
                 <widget id="Rule" type="LISTBOX_SIMPLE">
                   <available-values>
@@ -189,17 +181,8 @@ return Arrays.asList(RuleType.values());}</expression>
                   <submit-button>Back</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import org.ow2.bonita.facade.*;
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
-import org.ow2.bonita.util.AccessorUtil;
-import org.ow2.bonita.facade.IdentityAPI;
-import org.ow2.bonita.facade.uuid.AbstractUUID;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
-import org.apache.directory.groovyldap.*
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.impl.StandardAPIAccessorImpl;
+                  <expression>${import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.bonita.facade.privilege.PrivilegePolicy;
-import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.facade.privilege.Rule.RuleType;
 
 PrivilegePolicy baserule;
@@ -228,15 +211,8 @@ AccessorUtil.getManagementAPI().setRuleTypePolicy(RuleType.valueOf(field_Rule), 
                 <widget id="Rules" type="TABLE">
                   <select-mode>NONE</select-mode>
                   <available-values>
-                    <expression>${import org.ow2.bonita.facade.*;&#13;
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
-import org.ow2.bonita.util.AccessorUtil;&#13;
-import org.ow2.bonita.facade.IdentityAPI;&#13;
-import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
-import org.apache.directory.groovyldap.*&#13;
-import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
-import org.ow2.bonita.facade.privilege.Rule&#13;
+                    <expression>${import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.privilege.Rule;&#13;
 &#13;
 List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
 List&lt;List&lt;String&gt;&gt; output = new ArrayList&lt;List&lt;String&gt;&gt;();&#13;
@@ -271,15 +247,8 @@ return output;}</expression>
                   <table-style>table_Step2_List_Rules_Rules</table-style>
                   <label-style>label_Step2_List_Rules_Rules</label-style>
                   <style>input_Step2_List_Rules_Rules</style>
-                  <variable-bound>${import org.ow2.bonita.facade.*;&#13;
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
-import org.ow2.bonita.util.AccessorUtil;&#13;
-import org.ow2.bonita.facade.IdentityAPI;&#13;
-import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
-import org.apache.directory.groovyldap.*&#13;
-import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
-import org.ow2.bonita.facade.privilege.Rule&#13;
+                  <variable-bound>${import org.ow2.bonita.util.AccessorUtil;&#13;
+import org.ow2.bonita.facade.privilege.Rule;&#13;
 &#13;
 List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
 List&lt;List&lt;String&gt;&gt; output = new ArrayList&lt;List&lt;String&gt;&gt;();&#13;
@@ -301,14 +270,7 @@ return output;}</variable-bound>
                 </widget>
                 <widget id="Rule" type="LISTBOX_SIMPLE">
                   <available-values>
-                    <expression>${import org.ow2.bonita.facade.*;&#13;
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;&#13;
-import org.ow2.bonita.util.AccessorUtil;&#13;
-import org.ow2.bonita.facade.IdentityAPI;&#13;
-import org.ow2.bonita.facade.uuid.AbstractUUID;&#13;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;&#13;
-import org.apache.directory.groovyldap.*&#13;
-import org.ow2.bonita.facade.privilege.Rule.RuleType&#13;
+                    <expression>${import org.ow2.bonita.util.AccessorUtil;&#13;
 import org.ow2.bonita.facade.privilege.Rule&#13;
 &#13;
 List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();&#13;
@@ -371,15 +333,8 @@ return "remove";}</expression>
                   <submit-button>Delete</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import org.ow2.bonita.facade.*;
-import org.ow2.bonita.facade.def.majorElement.ProcessDefinition;
-import org.ow2.bonita.util.AccessorUtil;
-import org.ow2.bonita.facade.IdentityAPI;
-import org.ow2.bonita.facade.uuid.AbstractUUID;
-import org.ow2.bonita.facade.uuid.ProcessDefinitionUUID;
-import org.apache.directory.groovyldap.*
-import org.ow2.bonita.facade.privilege.Rule.RuleType
-import org.ow2.bonita.facade.privilege.Rule
+                  <expression>${import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.privilege.Rule;
 
 List&lt;Rule&gt; rules = AccessorUtil.getManagementAPI().getAllRules();
 
@@ -484,15 +439,9 @@ return Arrays.asList(RuleType.values());}</expression>
                   <expression>field_description</expression>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.List;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.privilege.Rule;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
-
-
 
 Rule newRule=AccessorUtil.getManagementAPI().createRule(name, label, description, RuleType.valueOf(ruleType));
 selectedRule=newRule.getUUID();}</expression>
@@ -625,10 +574,12 @@ return ruleObj.getDescription();}</variable-bound>
                 <widget id="Exceptions_List" type="RADIOBUTTON_GROUP">
                   <available-values>
                     <expression>${import org.ow2.bonita.facade.privilege.Rule;
+import org.ow2.bonita.util.AccessorUtil;
+
 
 Set exceptions = new HashSet&lt;String&gt;();
 
-Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 
 for(String atual: ruleObj.getItems()){
 	exceptions.add(atual);
@@ -652,8 +603,9 @@ return exceptions;}</expression>
 import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.light.LightProcessDefinition;
 import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
+import org.ow2.bonita.util.AccessorUtil;
 
-Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 List&lt;String&gt; UUIDs = [];
 
 /* All Rule Types
@@ -700,7 +652,7 @@ switch(ruleObj.getType()){
 	case RuleType.PROCESS_MANAGE:
 	case RuleType.PROCESS_READ:
 	case RuleType.PROCESS_START:
-		Set &lt;LightProcessDefinition&gt; processes = apiAccessor.getQueryDefinitionAPI().getLightProcesses();
+		Set &lt;LightProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getLightProcesses();
 		
 		processes.each{
 			UUIDs.add(it.getUUID());
@@ -717,17 +669,17 @@ switch(ruleObj.getType()){
 	case RuleType.SKIP_STEP:
 	case RuleType.SUSPEND_STEP:
 	case RuleType.UNASSIGN_STEP:
-		Set &lt;LightProcessDefinition&gt; processes = apiAccessor.getQueryDefinitionAPI().getLightProcesses();
+		Set &lt;LightProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getLightProcesses();
 		
 		processes.each{
-			Set&lt;ActivityDefinitionUUID&gt; activities=apiAccessor.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
+			Set&lt;ActivityDefinitionUUID&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
 			UUIDs.addAll(activities);
 		}
 		break;
 		
 	//Categories
 	case Rule.RuleType.CATEGORY_READ:
-		Set&lt;Category&gt; categories = apiAccessor.getWebAPI().getAllCategories();
+		Set&lt;Category&gt; categories = AccessorUtil.getWebAPI().getAllCategories();
 	
 		categories.each{
 			UUIDs.add(it.getUUID());
@@ -773,21 +725,9 @@ return UUIDs}</expression>
                 </widget>
                 <widget id="User_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
+                    <expression>${import org.ow2.bonita.facade.identity.User;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
-
-
-
-
-
 
 
 Map&lt;String,String&gt; users=new HashMap&lt;String,String&gt;();
@@ -834,16 +774,8 @@ return users;}</expression>
                 </widget>
                 <widget id="Roles_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Role;
+                    <expression>${import org.ow2.bonita.facade.identity.Role;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 
@@ -891,16 +823,8 @@ return roles;}</expression>
                 </widget>
                 <widget id="Groups_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Group;
+                    <expression>${import org.ow2.bonita.facade.identity.Group;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 
@@ -964,19 +888,10 @@ return groups;}</expression>
                 </widget>
                 <widget id="Memberships_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Membership;
+                    <expression>${import org.ow2.bonita.facade.identity.Membership;
 import org.ow2.bonita.facade.identity.Group;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
-
 
 
 Map&lt;String,String&gt; memberships=new HashMap&lt;String,String&gt;();
@@ -1045,16 +960,7 @@ return memberships;}</expression>
                 </widget>
                 <widget id="Entities_List" type="RADIOBUTTON_GROUP">
                   <available-values>
-                    <expression>${import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Group;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                    <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 
@@ -1104,16 +1010,8 @@ return entities;}</expression>
                   <submit-button>Back</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
+                  <expression>${import org.ow2.bonita.facade.identity.User;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1123,11 +1021,7 @@ AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),Arrays.asL
                   <submit-button>AddNewUser</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 
@@ -1139,42 +1033,35 @@ AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),Arrays.
                   <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.facade.uuid.AbstractUUID;
 import org.ow2.bonita.facade.uuid.RuleExceptionUUID;
+import org.ow2.bonita.util.AccessorUtil;
 
 
-Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 
 Set exceptions=new HashSet&lt;AbstractUUID&gt;();
 
 exceptions.add(new RuleExceptionUUID(field_NewExceptionName));
 
-apiAccessor.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), exceptions);}</expression>
+AccessorUtil.getManagementAPI().addExceptionsToRuleByUUID(ruleObj.getUUID(), exceptions);}</expression>
                   <submit-button>AddNewException</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
                   <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.facade.uuid.RuleExceptionUUID;
 import org.ow2.bonita.facade.uuid.AbstractUUID;
+import org.ow2.bonita.util.AccessorUtil;
 
-Rule ruleObj=apiAccessor.getManagementAPI().getRuleByUUID(selectedRule);
+Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 	
 Set exceptions=new HashSet&lt;AbstractUUID&gt;();
 exceptions.add(new RuleExceptionUUID(field_Exceptions_List));
 	
-apiAccessor.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,exceptions);}</expression>
+AccessorUtil.getManagementAPI().removeExceptionsFromRuleByUUID(selectedRule,exceptions);}</expression>
                   <submit-button>RemoveSelectedException</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Role;
+                  <expression>${import org.ow2.bonita.facade.identity.Role;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1184,13 +1071,7 @@ AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,Array
                   <submit-button>AddNewRole</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1198,17 +1079,8 @@ AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,Ar
                   <submit-button>RemoveSelectedRole</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Group;
+                  <expression>${import org.ow2.bonita.facade.identity.Group;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 
@@ -1239,13 +1111,7 @@ List&lt;String&gt; getGroupPathAsList(String pathStr){
                   <submit-button>AddNewGroup</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1253,19 +1119,10 @@ AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,nu
                   <submit-button>RemoveSelectedGroup</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import org.ow2.bonita.connector.core.ConnectorError;
-import org.ow2.bonita.connector.core.ProcessConnector;
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.identity.Membership;
+                  <expression>${import org.ow2.bonita.facade.identity.Membership;
 import org.ow2.bonita.facade.identity.Group;
 import org.ow2.bonita.facade.identity.Role;
 import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1305,22 +1162,16 @@ List&lt;String&gt; getGroupPathAsList(String pathStr){
                   <submit-button>AddNewMembership</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
+
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 AccessorUtil.getManagementAPI().removeRuleFromEntities(ruleObj.getUUID(),null,null,null,Arrays.asList(field_Memberships_List), null);}</expression>
                   <submit-button>RemoveSelectedMembership</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
@@ -1330,11 +1181,7 @@ AccessorUtil.getManagementAPI().applyRuleToEntities(ruleObj.getUUID(),null,null,
                   <submit-button>AddNewEntity</submit-button>
                 </action>
                 <action type="EXECUTE_SCRIPT">
-                  <expression>${import java.util.Arrays;
-
-import org.ow2.bonita.facade.identity.User;
-import org.ow2.bonita.facade.privilege.Rule;
-import org.ow2.bonita.facade.privilege.Rule.RuleType;
+                  <expression>${import org.ow2.bonita.facade.privilege.Rule;
 import org.ow2.bonita.util.AccessorUtil;
 
 

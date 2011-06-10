@@ -89,10 +89,7 @@ div#bonita-identification-area {
 	display: inline;
 }
 
-.bonita_logout_label {
-	cursor: pointer;
-	display: inline;
-}
+.bonita_logout_label, .bonita_logout_label:visited, .bonita_logout_label:hover {	display: inline;	text-decoration: none;	color: #333333;}
 
 .bonita-footer {
 	color:#FFFFFF;
@@ -170,13 +167,7 @@ div#bonita_form {
 	margin-bottom: 10px;
 }
 
-.bonita_identif-2 {
-	color: #DBDBDB;
-	font-size: 12px;
-	padding-right: 3px;
-	cursor: pointer;
-	cursor: hand;
-}
+.bonita_identif-2, .bonita_identif-2:visited, .bonita_identif-2:hover {	color: #DBDBDB;	font-size: 12px;	padding-right: 3px;	text-decoration: none;}
 /** End of User ID Card */
 
 /* default page template style */
