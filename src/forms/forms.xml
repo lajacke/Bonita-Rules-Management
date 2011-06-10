@@ -603,6 +603,7 @@ return exceptions;}</expression>
 import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.light.LightProcessDefinition;
 import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
+import org.ow2.bonita.facade.def.majorElement.ActivityDefinition;
 import org.ow2.bonita.util.AccessorUtil;
 import org.ow2.bonita.facade.def.majorElement.ProcessDefinition.ProcessState;
 
@@ -677,9 +678,13 @@ switch(ruleObj.getType()){
 		
 		processes.each{
 			if(it.getState() == ProcessState.ENABLED){
-				Set&lt;ActivityDefinitionUUID&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
-				//AccessorUtil.getQueryDefinitionAPI().getProcessActivities(it.getUUID());
-				UUIDs.addAll(activities);
+				//Set&lt;ActivityDefinitionUUID&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
+				//UUIDs.addAll(activities);
+				Set&lt;ActivityDefinition&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessActivities(it.getUUID());
+				
+				activities.each{
+					UUIDs.add(it.getUUID());
+				}
 			}
 		}
 		break;
