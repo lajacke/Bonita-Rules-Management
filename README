@@ -8,7 +8,6 @@ Please send your suggestions.
 Obs: All exception are added by UUIDs. Some kind of exception, like "Labels" do not have a friendly UUDIs.
 
 TODOs:
-*Make it possible to add Labels by name instead of UUIDs.
 *Beautify code. This code was almost  try/error based, and this is the first working version. So it is not beautiful at all. It needs a very good refactoring.
 *Use Groovy. I'm not a groovy programer, so all my groovy code is not more than java. I'm sure someone more experienced with it could do better.
 *Sanitize input. I'm not yet verifying if input data are valid.
