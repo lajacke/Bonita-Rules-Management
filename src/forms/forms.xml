@@ -604,6 +604,8 @@ import org.ow2.bonita.facade.privilege.Rule.RuleType;
 import org.ow2.bonita.light.LightProcessDefinition;
 import org.ow2.bonita.facade.uuid.ActivityDefinitionUUID;
 import org.ow2.bonita.util.AccessorUtil;
+import org.ow2.bonita.facade.def.majorElement.ProcessDefinition.ProcessState;
+
 
 Rule ruleObj=AccessorUtil.getManagementAPI().getRuleByUUID(selectedRule);
 List&lt;String&gt; UUIDs = [];
@@ -653,9 +655,11 @@ switch(ruleObj.getType()){
 	case RuleType.PROCESS_READ:
 	case RuleType.PROCESS_START:
 		Set &lt;LightProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getLightProcesses();
-		
+
 		processes.each{
-			UUIDs.add(it.getUUID());
+			if(it.getState() == ProcessState.ENABLED){
+				UUIDs.add(it.getUUID());
+			}
 		}
 		break;
 	
@@ -672,8 +676,11 @@ switch(ruleObj.getType()){
 		Set &lt;LightProcessDefinition&gt; processes = AccessorUtil.getQueryDefinitionAPI().getLightProcesses();
 		
 		processes.each{
-			Set&lt;ActivityDefinitionUUID&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
-			UUIDs.addAll(activities);
+			if(it.getState() == ProcessState.ENABLED){
+				Set&lt;ActivityDefinitionUUID&gt; activities=AccessorUtil.getQueryDefinitionAPI().getProcessTaskUUIDs(it.getUUID());
+				//AccessorUtil.getQueryDefinitionAPI().getProcessActivities(it.getUUID());
+				UUIDs.addAll(activities);
+			}
 		}
 		break;
 		

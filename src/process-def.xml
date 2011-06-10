@@ -26,8 +26,8 @@
     </data-fields>
     <attachments/>
     <activities>
-      <activity name="Step3">
-        <label>Create Rule</label>
+      <activity name="Step1">
+        <label>Edit Base</label>
         <description/>
         <priority>0</priority>
         <executing-time>0</executing-time>
@@ -41,40 +41,38 @@
         </performers>
         <connectors/>
         <data-fields>
-          <data-field name="description">
-            <label>Description</label>
-            <value>rO0ABXA=</value>
+          <data-field name="action">
+            <label>Action</label>
+            <value>rO0ABXQABm1vZGlmeQ==</value>
             <description/>
             <datatype-classname>java.lang.String</datatype-classname>
             <is-transient>false</is-transient>
             <enumeration-values/>
           </data-field>
-          <data-field name="name">
-            <label>Name</label>
-            <value>rO0ABXA=</value>
-            <description/>
-            <datatype-classname>java.lang.String</datatype-classname>
-            <is-transient>false</is-transient>
-            <enumeration-values/>
-          </data-field>
+        </data-fields>
+        <deadlines/>
+        <outgoing-events/>
+        <boundary-events/>
+        <subflow-in-parameters/>
+        <subflow-out-parameters/>
+      </activity>
+      <activity name="Edit_Rule">
+        <label>Edit Rule</label>
+        <description/>
+        <priority>0</priority>
+        <executing-time>0</executing-time>
+        <split-type>AND</split-type>
+        <join-type>XOR</join-type>
+        <type>Human</type>
+        <asynchronous>false</asynchronous>
+        <terminate-process>false</terminate-process>
+        <performers>
+          <performer>Initiator</performer>
+        </performers>
+        <connectors/>
+        <data-fields>
           <data-field name="action">
             <label>action</label>
-            <value>rO0ABXA=</value>
-            <description/>
-            <datatype-classname>java.lang.String</datatype-classname>
-            <is-transient>false</is-transient>
-            <enumeration-values/>
-          </data-field>
-          <data-field name="ruleType">
-            <label>RuleType</label>
-            <value>rO0ABXA=</value>
-            <description/>
-            <datatype-classname>org.ow2.bonita.facade.privilege.Rule$RuleType</datatype-classname>
-            <is-transient>false</is-transient>
-            <enumeration-values/>
-          </data-field>
-          <data-field name="label">
-            <label>Label</label>
             <value>rO0ABXA=</value>
             <description/>
             <datatype-classname>java.lang.String</datatype-classname>
@@ -118,8 +116,27 @@
         <subflow-in-parameters/>
         <subflow-out-parameters/>
       </activity>
-      <activity name="Step1">
-        <label>Edit Base</label>
+      <activity name="End">
+        <label>End</label>
+        <description/>
+        <priority>0</priority>
+        <executing-time>0</executing-time>
+        <split-type>AND</split-type>
+        <join-type>XOR</join-type>
+        <type>Automatic</type>
+        <asynchronous>false</asynchronous>
+        <terminate-process>true</terminate-process>
+        <performers/>
+        <connectors/>
+        <data-fields/>
+        <deadlines/>
+        <outgoing-events/>
+        <boundary-events/>
+        <subflow-in-parameters/>
+        <subflow-out-parameters/>
+      </activity>
+      <activity name="Step3">
+        <label>Create Rule</label>
         <description/>
         <priority>0</priority>
         <executing-time>0</executing-time>
@@ -133,9 +150,41 @@
         </performers>
         <connectors/>
         <data-fields>
+          <data-field name="label">
+            <label>Label</label>
+            <value>rO0ABXA=</value>
+            <description/>
+            <datatype-classname>java.lang.String</datatype-classname>
+            <is-transient>false</is-transient>
+            <enumeration-values/>
+          </data-field>
           <data-field name="action">
-            <label>Action</label>
-            <value>rO0ABXQABm1vZGlmeQ==</value>
+            <label>action</label>
+            <value>rO0ABXA=</value>
+            <description/>
+            <datatype-classname>java.lang.String</datatype-classname>
+            <is-transient>false</is-transient>
+            <enumeration-values/>
+          </data-field>
+          <data-field name="ruleType">
+            <label>RuleType</label>
+            <value>rO0ABXA=</value>
+            <description/>
+            <datatype-classname>org.ow2.bonita.facade.privilege.Rule$RuleType</datatype-classname>
+            <is-transient>false</is-transient>
+            <enumeration-values/>
+          </data-field>
+          <data-field name="description">
+            <label>Description</label>
+            <value>rO0ABXA=</value>
+            <description/>
+            <datatype-classname>java.lang.String</datatype-classname>
+            <is-transient>false</is-transient>
+            <enumeration-values/>
+          </data-field>
+          <data-field name="name">
+            <label>Name</label>
+            <value>rO0ABXA=</value>
             <description/>
             <datatype-classname>java.lang.String</datatype-classname>
             <is-transient>false</is-transient>
@@ -148,8 +197,8 @@
         <subflow-in-parameters/>
         <subflow-out-parameters/>
       </activity>
-      <activity name="End">
-        <label>End</label>
+      <activity name="Start">
+        <label>Start</label>
         <description/>
         <priority>0</priority>
         <executing-time>0</executing-time>
@@ -157,7 +206,7 @@
         <join-type>XOR</join-type>
         <type>Automatic</type>
         <asynchronous>false</asynchronous>
-        <terminate-process>true</terminate-process>
+        <terminate-process>false</terminate-process>
         <performers/>
         <connectors/>
         <data-fields/>
@@ -202,60 +251,38 @@
         <subflow-in-parameters/>
         <subflow-out-parameters/>
       </activity>
-      <activity name="Edit_Rule">
-        <label>Edit Rule</label>
-        <description/>
-        <priority>0</priority>
-        <executing-time>0</executing-time>
-        <split-type>AND</split-type>
-        <join-type>XOR</join-type>
-        <type>Human</type>
-        <asynchronous>false</asynchronous>
-        <terminate-process>false</terminate-process>
-        <performers>
-          <performer>Initiator</performer>
-        </performers>
-        <connectors/>
-        <data-fields>
-          <data-field name="action">
-            <label>action</label>
-            <value>rO0ABXA=</value>
-            <description/>
-            <datatype-classname>java.lang.String</datatype-classname>
-            <is-transient>false</is-transient>
-            <enumeration-values/>
-          </data-field>
-        </data-fields>
-        <deadlines/>
-        <outgoing-events/>
-        <boundary-events/>
-        <subflow-in-parameters/>
-        <subflow-out-parameters/>
-      </activity>
-      <activity name="Start">
-        <label>Start</label>
-        <description/>
-        <priority>0</priority>
-        <executing-time>0</executing-time>
-        <split-type>AND</split-type>
-        <join-type>XOR</join-type>
-        <type>Automatic</type>
-        <asynchronous>false</asynchronous>
-        <terminate-process>false</terminate-process>
-        <performers/>
-        <connectors/>
-        <data-fields/>
-        <deadlines/>
-        <outgoing-events/>
-        <boundary-events/>
-        <subflow-in-parameters/>
-        <subflow-out-parameters/>
-      </activity>
     </activities>
     <transitions>
-      <transition name="Start__Menu">
+      <transition name="Step1__Step1">
         <description/>
-        <from>Start</from>
+        <from>Step1</from>
+        <to>Step1</to>
+        <is-default>true</is-default>
+      </transition>
+      <transition name="Step2__Step2">
+        <condition>action=="remove"</condition>
+        <description/>
+        <from>Step2</from>
+        <to>Step2</to>
+        <is-default>false</is-default>
+      </transition>
+      <transition name="Step2__Menu">
+        <description/>
+        <from>Step2</from>
+        <to>Menu</to>
+        <is-default>true</is-default>
+      </transition>
+      <transition name="Edit_Rule__Menu">
+        <condition>action=="back"</condition>
+        <description/>
+        <from>Edit_Rule</from>
+        <to>Menu</to>
+        <is-default>false</is-default>
+      </transition>
+      <transition name="Step3__Menu">
+        <condition>action=="back"</condition>
+        <description/>
+        <from>Step3</from>
         <to>Menu</to>
         <is-default>false</is-default>
       </transition>
@@ -266,12 +293,23 @@
         <to>Edit_Rule</to>
         <is-default>false</is-default>
       </transition>
-      <transition name="Menu__Step3">
-        <condition>menu_Options=="Add_Rule"</condition>
+      <transition name="Step3__Edit_Rule">
+        <description/>
+        <from>Step3</from>
+        <to>Edit_Rule</to>
+        <is-default>true</is-default>
+      </transition>
+      <transition name="Start__Menu">
+        <description/>
+        <from>Start</from>
+        <to>Menu</to>
+        <is-default>false</is-default>
+      </transition>
+      <transition name="Menu__End">
         <description/>
         <from>Menu</from>
-        <to>Step3</to>
-        <is-default>false</is-default>
+        <to>End</to>
+        <is-default>true</is-default>
       </transition>
       <transition name="Menu__Step1">
         <condition>menu_Options=="Edit_Base"</condition>
@@ -280,25 +318,6 @@
         <to>Step1</to>
         <is-default>false</is-default>
       </transition>
-      <transition name="Edit_Rule__Menu">
-        <condition>action=="back"</condition>
-        <description/>
-        <from>Edit_Rule</from>
-        <to>Menu</to>
-        <is-default>false</is-default>
-      </transition>
-      <transition name="Step1__Step1">
-        <description/>
-        <from>Step1</from>
-        <to>Step1</to>
-        <is-default>true</is-default>
-      </transition>
-      <transition name="Menu__End">
-        <description/>
-        <from>Menu</from>
-        <to>End</to>
-        <is-default>true</is-default>
-      </transition>
       <transition name="Menu__Step2">
         <condition>menu_Options=="Edit_Rules"</condition>
         <description/>
@@ -306,18 +325,11 @@
         <to>Step2</to>
         <is-default>false</is-default>
       </transition>
-      <transition name="Step2__Step2">
-        <condition>action=="remove"</condition>
+      <transition name="Menu__Step3">
+        <condition>menu_Options=="Add_Rule"</condition>
         <description/>
-        <from>Step2</from>
-        <to>Step2</to>
-        <is-default>false</is-default>
-      </transition>
-      <transition name="Step1__Menu">
-        <condition>action=="back"</condition>
-        <description/>
-        <from>Step1</from>
-        <to>Menu</to>
+        <from>Menu</from>
+        <to>Step3</to>
         <is-default>false</is-default>
       </transition>
       <transition name="Edit_Rule__Edit_Rule">
@@ -326,24 +338,12 @@
         <to>Edit_Rule</to>
         <is-default>true</is-default>
       </transition>
-      <transition name="Step3__Menu">
+      <transition name="Step1__Menu">
         <condition>action=="back"</condition>
         <description/>
-        <from>Step3</from>
+        <from>Step1</from>
         <to>Menu</to>
         <is-default>false</is-default>
-      </transition>
-      <transition name="Step2__Menu">
-        <description/>
-        <from>Step2</from>
-        <to>Menu</to>
-        <is-default>true</is-default>
-      </transition>
-      <transition name="Step3__Edit_Rule">
-        <description/>
-        <from>Step3</from>
-        <to>Edit_Rule</to>
-        <is-default>true</is-default>
       </transition>
     </transitions>
     <connectors/>
