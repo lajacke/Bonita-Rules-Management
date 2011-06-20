@@ -6,5 +6,5 @@
 ### ====================================================================== ###
 
 cd src
-zip -r ../Rules_Management_Process--1.0.bar *
+zip -r ../Rules_Management_Process--1.2.bar *
 cd ..
